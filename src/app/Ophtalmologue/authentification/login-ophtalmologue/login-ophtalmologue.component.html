@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="wrapper">
+            <nav>
+                <br><br>
+                <ul class="nav-items">
+                    <li>
+                        <a  routerLink=""> <i class="fa fa-home" ></i> Acceuil</a>
+                    </li>
+                    <li>
+                        <a routerLink="/Registre" ><i class="fa fa-registered" aria-hidden="true"></i> &nbsp; S'inscrire </a>
+                    </li>
+                    <li>
+                        <a routerLink="/Login"><i class="fa fa-sign-in"></i> &nbsp;  S'identifier</a>
+                    </li>
+                </ul>
+                <img src="./assets/images/lineFormRegistre.png" alt="">
+            </nav>
+        </div>
+    </div>
+    <div class="header-container">
+        <div class="wrapper">
+            
+                <div class="hero-image"> 
+                   <img src="./assets/images/Formlogin.png" height="300px" width="500px" style="margin-left: 40rem;">  
+                </div>
+                <div class="contour">
+                    <div class="contour2">
+                        <div class="login-page">
+                            <div class="example-container">
+                                <h2> Bienvenue  !</h2>
+                               <hr > 
+                             <!--  <img src="./assets/images/email.png" alt="" id="iconeEmail">                         
+                                <mat-form-field appearance="fill" id="emailInput">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                    <input matInput placeholder="pat@example.com" [formControl]="email" required >
+                                  <mat-label>Entrer votre  email</mat-label>
+                                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                </mat-form-field><br>
+                                <mat-form-field appearance="fill" id="inputPassword">
+                                    <mat-label> mot de passe</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                  </mat-form-field>
+                                  <a routerLink="/ForgetPassword" id="forget">Forget Password</a>
+                                  <div >
+                                    <button (click)="fonction1()" routerLink="/accueil" id="loginBtn"> Connexion </button>
+
+                                  </div >
+                                  <p align="center" id="btnSignUp1">Don’t have an account ?  <a routerLink="/Registre" id="btnSignUp">Sign Up</a></p>
+                              </div>--> 
+    <div class="container">
+    <div class="forms">
+        <div class="form login">
+<form (ngSubmit)="login1(fl)" #fl=ngForm style="margin-top: -10px;">
+<div class="input-field">
+    <input type="text"   placeholder="Identifiant" 
+    ngModel name="nom"  required #nom="ngModel">
+    <i class="fa fa-user" style="margin-top: -10px;" ></i>
+    <span style="color:red ;position: absolute;margin-left: 35px;width: 340px;top: 40px;"
+    *ngIf="!nom.valid && nom.touched">Entrer  nom  valide </span>
+
+</div>
+
+<div class="input-field">
+    <input  id="password-field" type="password" name="password" placeholder="Mot de passe" 
+    ngModel name="pwd"  required #pwd="ngModel">
+    <i class="fa fa-lock icon" style="margin-top: -10px;"></i>
+    <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+    style="position:absolute;margin-top: 12px;margin-left: 290px;" ></span>
+    <span style="color:red ;position: absolute;margin-left: 35px;width: 340px;top: 40px;" 
+*ngIf="!pwd.valid && pwd.touched" >Entrer  un mot de passe valide </span>
+</div>
+<div class="espace">
+<div class="checkbox-text">
+    <div class="checkbox-content">
+        <input type="checkbox" id="remember-me" name="remember-me">
+        <label for="remember-me" class="text">Remember me</label>
+    </div>
+
+    <a routerLink="/ForgetPassword"  class="text">Mot de passe oublié?</a>
+</div>
+
+<div >
+    <button id="loginBtn"> Connexion </button>
+
+  </div >
+  <p align="center" id="btnSignUp1">Vous n'avez pas de compte ? <a routerLink="/Registre" id="btnSignUp">S'inscrire</a></p>
+</div>
+</form> 
+</div>
+</div>
+</div>
+
+                    </div></div></div>
+        
+        </div>
+    </div>
+    </div>
+</body>
+</html> 
+               

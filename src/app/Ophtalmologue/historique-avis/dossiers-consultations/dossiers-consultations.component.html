@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Welcome</title>
+</head>
+<body>
+
+<div class="nav-container">
+<div class="wrapper">
+<br>
+<nav >
+<div class="img-nav">
+<img src="./assets/images/navbar.png" >
+</div>
+<ul class="nav-items">
+<div class="content">
+<div id="admin"></div>
+<img src="./assets/images/menu 1.png" id="menu">
+<div id="menu23">
+<div id="arrow"></div>
+<a routerLink="/PageProfile">Profile <i id="firstIcon" class="fa fa-user-md"></i></a>
+<a routerLink="/chart-Activity-Doctor">Mon Activité<i id="secondIcon" class="fa fa-bar-chart-o"></i></a>
+<a >Mode d'affichage 
+    <div class="button-con">
+        <label id='sun' for='cb1'>
+            <i class="fa fa-sun-o fa-1x" aria-hidden="true"></i>
+        </label>
+        <input class='toggle' id='cb1' type='checkbox'>
+        <label class='toggle-button' for='cb1'></label>
+        <label id='moon' for='cb1'>
+            <i class="fa fa-moon-o fa-1x" aria-hidden="true"></i>
+        </label>
+        </div>  
+        </a>
+</div>
+</div>
+<a routerLink="/PageProfile/{{id}}">
+<img src={{imagePath}} class="img-carree">
+<div class="pointConnexion"></div>
+</a>
+<a routerLink="/PageProfile/{{id}}"  id="nom">Bienvenue  
+<span>{{user.username}}</span></a>
+<li>
+<div class="budgecard">
+
+    <a  class="notifications"  routerLink="/accueil">
+        <i class="fa fa-bell" aria-hidden="true"></i>  
+        <span class="badge" *ngIf=" avisService.lengthDemandePrincipale !== 0 ">{{ avisService.lengthDemandePrincipale}}</span> &nbsp;Accueil 
+    </a></div>
+</li>
+<img src="./assets/images/Line.svg" id="line1">
+
+<li>
+<a routerLink="/historique"  id="list"><i class="fa fa-history" aria-hidden="true" ></i> Historique  des avis</a>
+</li>
+<li>
+<img src="./assets/images/Line.svg" id="line2">
+
+<a id="logout" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a>
+<!--<img src="./assets/images/logout.png" id="iconeLogout">-->
+</li>
+</ul>
+
+</nav>
+</div>
+</div>  
+<br><br><br><br><br>
+<div class="container">
+<div class="row"  >
+<div class="col-md-3 "*ngFor="let elt of resultats"><img src="./assets/images/d2.png" width="150px"  heigth="150px" routerLink="/consultation/{{elt.id}}" >  
+<br> <span class="span">consultation n° {{data}}</span><br>
+<span  class="span">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+</div>
+</div>
+</div>
+<br><br>
+</body>
+</html>

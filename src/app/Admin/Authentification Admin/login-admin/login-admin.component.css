@@ -1,0 +1,165 @@
+.login-dark {
+    height:649px;
+    background:#475d62 ;
+    background-size:cover;
+  }
+  
+  .login-dark form {
+    max-width:320px;
+    width:90%;
+    background-color:#1e2833;
+    padding:40px;
+    border-radius:4px;
+    transform:translate(-50%, -50%);
+    position:absolute;
+    top:50%;
+    left:50%;
+    color:#fff;
+    box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+  }
+  
+  .login-dark .illustration {
+    text-align:center;
+    padding:15px 0 20px;
+    font-size:100px;
+    color:#2980ef;
+  }
+  
+  .login-dark form .form-control {
+    background:none;
+    border:none;
+    border-bottom:1px solid #434a52;
+    border-radius:0;
+    box-shadow:none;
+    outline:none;
+    color:inherit;
+  }
+  
+  .login-dark form .btn-primary {
+    background:#214a80;
+    border:none;
+    border-radius:4px;
+    padding:11px;
+    box-shadow:none;
+    margin-top:26px;
+    text-shadow:none;
+    outline:none;
+  }
+  
+  .login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+    background:#214a80;
+    outline:none;
+  }
+  
+  .login-dark form .forgot {
+    display:block;
+    text-align:center;
+    font-size:12px;
+    color:#6f7a85;
+    opacity:0.9;
+    text-decoration:none;
+  }
+  
+  .login-dark form .forgot:hover, .login-dark form .forgot:active {
+    opacity:1;
+    text-decoration:none;
+  }
+  
+  .login-dark form .btn-primary:active {
+    transform:translateY(1px);
+  }
+  
+  .txt{
+      position: absolute;
+      font-size: 15px;
+      top: 440px;
+      color: rgb(230, 227, 223);
+  }
+.btn2{
+  color:#2980ef;
+text-decoration: none;}
+.btn2:hover{
+    color:#737475;
+    text-decoration: none;}
+#accueil{
+    position: absolute;
+    color: #000;
+    left: 1200px;
+    font-size: 20px;
+    top: 10px;
+    font-family: bold;
+    text-decoration: none;
+}
+#accueil:hover{
+    color: #fff;}
+  input:active{
+    background-color: #1E2833;
+  }
+/*************** form **************************/
+.container.active .login {
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.36s ease, opacity 0.3s ease;
+}
+
+.form .input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.input-field input {
+  position: absolute;
+  top: 192px;
+  left: 9px;
+  height: 33px;
+  width: 291px;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: border-bottom-color 0.4s ease;
+  background: #1E2833;
+}
+.input-field :hover{
+  background:  #1E2833;
+}
+.input-field :active{
+  background:  #1E2833;
+}
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: #2980EF;
+  background:  #1E2833;
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
+  transition: color 0.4s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i {
+  color: #2980EF;
+  background:  #1E2833;
+}
+
+.input-field i.icon {
+  left: 0;
+}
+
+.input-field i.showHidePw {
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+#password-field{
+  position: absolute;
+  top: 255px;
+  left: 12px;
+}

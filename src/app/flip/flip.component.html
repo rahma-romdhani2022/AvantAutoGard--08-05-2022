@@ -1,0 +1,88 @@
+<body>
+
+<div class="containerRahma">
+    <div [ngClass]="toggleProperty ? 'flipped' : ''" class="card">
+      <div class="front">
+        <img id="imageAdmin" src={{imageAdmin}} alt="profile-img">
+        <h2>{{admin.username}}</h2>
+        <small>{{admin.role}}</small>
+        <ng-content select="flip-card-front"></ng-content>
+        <p id="btnRotate" >
+          <button id="RotateEdite" style="width: 150px;" (click)="toggle()"> Edite Profile &nbsp; 
+             <span id="niveau"><i class="fa fa-pencil"></i></span></button>     
+         </p>
+      </div>
+      <div class="back">
+<form (ngSubmit)="modifierProfileAdminnn(form)" #form=ngForm>
+        <div class="avatar-upload" style="margin-top: -4px;">
+            <div class="avatar-edit" *ngIf="testImage === null ; else close">
+            <input type='file' id="imageUpload" (change)="onSelectFile($event)" class="select-profile-picture"  accept=".png, .jpg, .jpeg" />
+            
+                <label for="imageUpload"></label>
+            </div>
+            <ng-template #close>
+            <div class="avatar-close" >
+             <label (click)="changeImage()" class="csslabel">
+             <i class="fa fa-times" style="color:  #757575; position: absolute;top: 10px;left: 10px;" ></i></label>
+                <label for="imageUpload"></label>
+              </div>
+            </ng-template>
+            <div class="avatar-preview">
+            <img id="imagePreview" src={{image}}>
+            <hr style="    position: relative;top: 132px;width: 221px;left: -45px; color: #585353d9;">
+            </div>
+        </div>
+      
+      <div class="login-dark" style="position: relative;top:-35px">
+        <h6 style="position: absolute;top: -190px;left: -86px;"> Nom et Prénom : </h6> 
+        <div class="form-group" style="position: absolute;top: -191px;left:-60px">
+          <input class="form-styling" type="text" name="username" placeholder="Identifiant"
+          [(ngModel)]=admin.username ngModel name="usename" required #username="ngModel"
+          style="width: 315px;color: #fff; margin-left: -40px; margin-top: 31px;">
+        </div>
+        <h6 style="position: absolute;top: -115px; left: -86px;"> Adresse Email : </h6> 
+              <div class="form-group" style="position: absolute;top: -120px;left:-60px">
+                  <input class="form-styling" type="email" name="email" placeholder="Email"
+                  [(ngModel)]=admin.email ngModel name="email" 
+                  required #email="ngModel" style="width: 315px;
+                  color: #fff;
+                  margin-left: -40px;
+                  margin-top: 37px;">  
+             </div>
+              <h6 style=" position: absolute; top:-32px;left: -86px;"> Identifiant de Utilisateur : </h6> 
+
+              <div class="form-group"style="position: absolute;top: -50px;left:-83px">
+                <input  class="form-styling" type="text" [(ngModel)]=admin.nomPrenom ngModel name="nomPrenom"  
+                required #nomPrenom="ngModel" style="width: 315px;color: #fff; margin-left: -15px; margin-top: 48px;">
+              </div> 
+       
+        <div *ngIf ="testDiplomeInput !== null">
+          <h6 style=" position: absolute; top:45px;left: -86px;"> Diplome de Utilisateur : </h6> 
+          <div class="form-group"style="position: absolute;top: -50px;left:-83px">
+            <input  class="form-styling" type="text" [(ngModel)]=admin.diplome ngModel name="diplome"  
+            required #diplome="ngModel" style="width: 315px;color: #fff; margin-left: -15px; margin-top: 121px;">
+          </div>
+        </div>   
+      </div>   
+          <div align="center" id="btnSave"  style=" background-color: #fff0;" *ngIf ="testDiplomeInput !== null"> 
+          <button class="btn btn-success" type="submit" >Valider</button>
+          &nbsp;&nbsp;&nbsp;
+          </div>
+          <div align="center" id="btnSaveElse"  style=" background-color: #fff0;" *ngIf ="testDiplomeInput === null" > 
+            <button class="btn btn-success" type="submit" >Valider</button>
+            &nbsp;&nbsp;&nbsp;
+            </div>
+</form>
+  
+        <ng-content select="flip-card-back"></ng-content>
+        <div id="bouttonAnnuler"*ngIf ="testDiplomeInput !== null" >
+        <a  class="btn btn-danger" (click)="toggle()">Annuler
+        </a></div>
+        <div id="bouttonAnnulerElse"*ngIf ="testDiplomeInput === null" >
+          <a  class="btn btn-danger" (click)="toggle()">Annuler
+          </a></div>
+      </div>
+    </div>
+  </div>
+   
+</body>

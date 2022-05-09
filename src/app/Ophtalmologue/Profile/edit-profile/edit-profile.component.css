@@ -1,0 +1,321 @@
+body {
+    background:  -webkit-linear-gradient(left, #8e9eab, #eef2f3);
+
+  width: 1354px;
+  height: 648px;
+
+    /*background: #E4EAFF;*/
+    
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+/* save buttoo */
+.profile-button {
+    position: absolute;
+    background:  -webkit-linear-gradient(left, #7f8b96, #c8cbcc);
+    box-shadow: none;
+    border: none ;
+    left:765px;
+    width: 100px;
+    font-size: 18px;
+}
+/* ti t7ot cursor 3al btn yitbadel color hetha */
+.profile-button:hover {
+    background:  -webkit-linear-gradient(right, #7f8b96, #c8cbcc);
+    color: #000;
+}
+
+/* cancel button */
+.cancel-button {
+    position: absolute;
+    background:  -webkit-linear-gradient(left, hsl(357, 50%, 55%), #f70318);
+    box-shadow: none;
+    border: none ;
+    left:875px;
+    width: 100px;
+    font-size: 18px;
+}
+/* ti t7ot cursor 3al btn yitbadel color hetha */
+.cancel-button:hover {
+    background:  -webkit-linear-gradient(right, hsl(357, 50%, 55%), #f70318);
+    color: #000;
+}
+
+
+.profile-button:focus {
+    background:  -webkit-linear-gradient(right, #7f8b96, #c8cbcc);
+    color: #000;    box-shadow: none
+}
+
+.profile-button:active {
+    background:  -webkit-linear-gradient(right, #7f8b96, #c8cbcc);
+    color: #000;
+     box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+#image1{
+    width: 110px;
+    height: 120px;
+}
+
+/* css de image profile */
+.profile-pic {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-pic:hover {
+    background-color: rgba(0,0,0,.5);
+    z-index: 10000;
+    color: #fff;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.profile-pic span {
+    display: inline-block;
+    padding-top: 5.5em;
+    padding-bottom: 4.5em;
+}
+
+form input[type="file"] {
+          display: none;
+          cursor: pointer;
+ }
+ #l1{
+     text-decoration: none;
+     color: #000;
+ }
+ #l1:hover {
+    color: #682773;
+    cursor: pointer
+}
+/************** checkbox **********/
+input:checked {
+    height: 15px;
+    width: 15px;
+    position:absolute ;
+    top:1px;
+    left:1px;
+  }
+  #label-Homme{
+    position:absolute;
+    color: #382a2a;
+    top: 443px;
+    left:750px;
+  }
+  #label-Femme{
+    position:absolute;
+    color: #262525;
+    top:443px;
+    left:965px;
+  }
+  #homme1{
+    position: absolute;
+    top: 450px;
+    left: 850px;
+  }
+  #femme1{
+    position: absolute;
+    top: 450px;
+    left: 1075px;
+  }
+  /********************upload image ***********************/
+
+.container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 20px;
+  }
+  h1 small {
+    display: block;
+    font-size: 15px;
+    padding-top: 8px;
+    color: gray;
+  }
+  .avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: -20px auto;
+    margin-top: -22px;
+  }
+  .avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+  }
+  .avatar-upload .avatar-edit input {
+    display: none;
+  }
+  .avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all .2s ease-in-out;
+  }
+  .avatar-upload .avatar-edit input + label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+  }
+  .avatar-upload .avatar-edit input + label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+  }
+  .avatar-upload .avatar-preview {
+    width: 170px;
+    height: 170px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+  }
+  .avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  /**************** test *************/
+
+
+.image-container {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  left: 307px;
+  top: 162px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.select-profile-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+.profile-pic {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  vertical-align: middle;
+  text-align: center;
+  color: transparent;
+  transition: all .3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.cercle {
+ 
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 165px;
+  left: 141px;
+  background-color: #e7e2e2;
+  border-radius: 50%;
+  display: inline-block;}
+  .profile-pic {
+    color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+ }
+  .profile-pic input {
+    display: none;
+ }
+  .profile-pic img {
+    position: absolute;
+    object-fit: cover;
+    width: 165px;
+    height: 165px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, .35);
+    border-radius: 100px;
+    z-index: 0;
+ }
+  .profile-pic .-label {
+    cursor: pointer;
+    height: 165px;
+    width: 165px;
+ }
+  .profile-pic:hover .-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 10000;
+    color: #fafafa;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 100px;
+    margin-bottom: 0;
+ }
+  .profile-pic span {
+    display: inline-flex;
+    padding: 0.2em;
+    height: 2em;
+ }
+
+.pen{
+  position: relative;
+  top: 7px;
+  
+
+} 

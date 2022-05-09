@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+ <title>Welcome</title>
+</head>
+<body>
+   
+    <div class="wrapper1">
+    <div class="form-inner">
+      <div class="form-container">
+         
+
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+          <mat-tab>
+              <ng-template mat-tab-label>
+                  <mat-icon><img src ="./assets/images/eyeA.gif"  width="35px" height="35px" id="icone1" /></mat-icon>
+                  <i class="fa fa-angle-double-left fa-1x" aria-hidden="true"></i>&nbsp; Oeil Gauche
+              </ng-template>
+          <form [formGroup]="formGroup1" style="height: 600px;">
+      <div class="field">
+        <!--div class="gallery" >   
+                                 
+          <a data-fancybox="gallery" data-src={{image1G}}>
+              <img src={{image1G}} width="230px" height="230px" />
+            </a>
+      
+            <a data-fancybox="gallery" data-src="image2G">
+              <img src={{image2G}} width="230px" height="230px" />
+            </a>
+      
+            <a data-fancybox="gallery" data-src="image3G">
+              <img src={{image3G}} width="230px" height="230px" />
+            </a>
+            <a data-fancybox="gallery" data-src="image4G">
+              <img src={{image4G}} width="230px" height="230px" />
+            </a>
+            <a data-fancybox="gallery" data-src="image5G">
+              <img src={{image5G}} width="230px" height="230px" />
+            </a>
+          </div-->
+          <div class="gallery"   >  
+            <div class="row">
+                <div class="col-2"  *ngFor="let image of images" >      
+            <a data-fancybox="gallery" data-src="image">
+                <img [src]="image" width="210px" height="210px" 
+              /></a></div>
+             </div>    
+        </div>
+      </div> 
+      
+
+  <div id="contain1">
+      <label id="maladie"> Maladie : &nbsp;{{consultation.autoDetection.avisExpert.maladieGauche}}</label>    
+   </div> 
+   
+
+
+   <div id="contain2">
+      <label id="niveau"> Niveau : &nbsp;{{consultation.autoDetection.avisExpert.graviteGauche}}</label>
+   </div>
+
+   <!-- code de liste deraulante-->
+  
+
+
+   <!--<div class="slide-controls1">
+      <div  class="slide1"  >-->
+          <!--Textarea with icon prefix-->
+<div id="aviss">
+<div class="md-form amber-textarea active-amber-textarea">
+ 
+  <br>
+  <p><label id="titre"><b><u>Avis d'expert   </u></b> : &nbsp;</label>: &nbsp;{{consultation.autoDetection.avisExpert.commentaireGauche}}</p>
+ </div>
+ </div>
+
+       
+      <!-- </div>
+       <div class="slider-tab1"></div>
+   </div> -->
+   <button  id="cancel" routerLink="/historiques">Quitter</button> 
+    
+  </form> 
+</mat-tab>
+<mat-tab [disabled]='true'></mat-tab>
+<mat-tab  [disabled]='true' ></mat-tab>  
+   <mat-tab  > 
+<ng-template mat-tab-label>
+<mat-icon><img src ="./assets/images/eyeA.gif"  width="35px" height="35px" id="icone1" />
+</mat-icon>
+Oeil Dorite &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i> 
+</ng-template>
+<form [formGroup]="formGroup2" style="height: 600px;">
+  <div class="field">      
+    <div class="gallery"   >  
+      <div class="row">
+          <div class="col-2"  *ngFor="let image of imagesDroite" >      
+      <a data-fancybox="gallery" data-src="image">
+          <img [src]="image" width="210px" height="210px" 
+        /></a></div>
+       </div>    
+  </div>
+      </div> 
+      
+     
+  <div id="contain1">
+      <label id="maladie"> Maladie  : &nbsp;{{consultation.autoDetection.avisExpert.maladieDroite}}</label>    
+   </div> 
+   
+
+
+   <div id="contain2">
+      <label id="niveau"> Niveau: &nbsp;{{consultation.autoDetection.avisExpert.graviteDroite}}</label>
+   </div>
+
+<div id="aviss">
+<div class="md-form amber-textarea active-amber-textarea">
+
+ <br>
+ <p><label id="titre"><b><u>Avis d'expert   </u></b> : &nbsp;</label> : &nbsp;{{consultation.autoDetection.avisExpert.commentaireDroite}}</p>
+</div>
+</div>
+  
+   
+        <button  id="cancel" routerLink="/historique">Quitter</button> 
+    
+ 
+      </form> 
+    </mat-tab>
+    </mat-tab-group>
+</div>
+</div> 
+</div>
+<div class="nav-container">
+<div class="wrapper">
+<br>
+<nav>
+<div class="img-nav">
+<img src="./assets/images/navbar.png" >
+</div>
+<ul class="nav-items">
+<div class="content">
+<div id="admin"></div>
+<img src="./assets/images/menu 1.png" id="menu">
+<div id="menu23">
+<div id="arrow"></div>
+<a routerLink="/PageProfile">Profile <i id="firstIcon" class="fa fa-user-md"></i></a>
+<a routerLink="/chart-Activity-Doctor">Mon Activité<i id="secondIcon" class="fa fa-bar-chart-o"></i></a>
+<a >Mode d'affichage 
+  <div class="button-con">
+      <label id='sun' for='cb1'>
+          <i class="fa fa-sun-o fa-1x" aria-hidden="true"></i>
+      </label>
+      <input class='toggle' id='cb1' type='checkbox'>
+      <label class='toggle-button' for='cb1'></label>
+      <label id='moon' for='cb1'>
+          <i class="fa fa-moon-o fa-1x" aria-hidden="true"></i>
+      </label>
+    </div>  
+    </a>              
+</div>
+</div>
+<a routerLink="/PageProfile/{{id}}">
+<img src={{imagePath}} class="img-carree">
+<div class="pointConnexion"></div>
+</a>
+<a routerLink="/PageProfile/{{id}}"  id="nom">Bienvenue  
+<span>{{user.username}}</span></a>
+<li>
+<div class="budgecard">
+
+  <a  class="notifications"  routerLink="/accueil">
+    <i class="fa fa-bell" aria-hidden="true"></i>  
+    <span class="badge" *ngIf=" serviceAvis.lengthDemandePrincipale !== 0 ">{{serviceAvis.lengthDemandePrincipale}}</span> &nbsp;Accueil 
+</a>
+</div>
+</li>
+<img src="./assets/images/Line.svg" id="line1">
+
+<li>
+<a routerLink="/historique"  id="list"><i class="fa fa-history" aria-hidden="true" ></i> Historique  des avis</a>
+</li>
+<li>
+<img src="./assets/images/Line.svg" id="line2">
+
+<a id="logout" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a>
+<!--<img src="./assets/images/logout.png" id="iconeLogout">-->
+</li>
+</ul>
+
+</nav>
+</div>
+</div> 
+<div style="position: absolute;
+height: 545px;
+width: 10px;
+background-color: #dfe6ff;
+top: 104px;
+left: 1354px;"></div>  
+</body> 
+</html>

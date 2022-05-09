@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html style="background-color: #97B8FF;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre</title>
+</head>
+<body  style="background-color: #97B8FF;"> 
+    <div class="nav-container">
+        <div class="wrapper">
+            <nav>
+                <br>
+                <ul class="nav-items">
+                    <li>
+                        <a  routerLink=""> <i class="fa fa-home" ></i> Acceuil</a>
+                    </li>
+                    <li>
+                        <a routerLink="/Registre" style="color: #FFFFFF;" ><i class="fa fa-registered" aria-hidden="true"
+                            style="color: #FFFFFF;"></i> &nbsp; S'inscrire </a>
+                    </li>
+                    <li>
+                        <a routerLink="/Login"><i class="fa fa-sign-in"></i> &nbsp;  S'identifier</a>
+                    </li>
+                </ul>
+                <img src="./assets/images/lineFormRegistre.png" alt="">
+            </nav>
+        </div>
+    </div>
+    <div class="header-container">
+        <div class="wrapper">
+            <header >
+                <div class="hero-image"> 
+                 <img src="./assets/images/formRegistre1.png" id="imageForm" height="400px" width="500px" >  
+            
+                </div>
+                <div id="rectangle">
+                    <img src="./assets/images/cercle.PNG" id="cercle">
+                <!--<form action="">
+                <div class="example-container">
+                    <mat-form-field appearance="fill" id="usernameInput">
+                        <input matInput placeholder="Entrer votre nom " [formControl]="email" required >
+                      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" id="emailInput">
+                        <input matInput placeholder="Entrer votre email" [formControl]="email" required >
+                      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" id="inputPassword">
+                        <input matInput [type]="hide ? 'password' : 'text'"  placeholder="mot de passe " >
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" id="confirmPassword"  placeholder="Confirmer " >
+                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                      </mat-form-field>
+                      <a (click)="fonction1()" class="btn1" routerLink="/pageLogin"> S'inscrire</a>
+                      <h3 class="txt">Vous avez déjà un compte ?  <a   class="btn2" routerLink="/Login">S'identifier</a></h3>
+                  
+                  </div>
+                   </form>  -->
+    <div class="container">
+    <div class="forms">
+        <div class="form login">
+<form (ngSubmit)="registre(fl)" #fl=ngForm >
+    <div class="input-field">
+        <input type="text"   placeholder="Nom et prenom" 
+        ngModel name="nom"  required #nom="ngModel" style="margin-top:1px;width: 420px;">
+        <i class="fa fa-user" style="margin-top: -10px;" ></i>
+        <span style="color:red ;position: absolute;left: 35px;top:40px ;font-size: 14px; width: 340px;" 
+        *ngIf="!nom.valid && nom.touched" >Entrer  un nom  et un prénom valide </span>
+    </div>
+<div class="input-field">
+    <input type="email"  placeholder="adresse email" 
+    ngModel name="email"  required #email="ngModel" style="margin-top:-5px;width: 420px;">
+    <i class="fa fa-envelope" style="margin-top: -15px;" ></i>
+    <span style="color:red ;position: absolute;left: 35px;top:34px ;font-size: 14px; width: 340px;" 
+    *ngIf="!email.valid && email.touched" >Entrer  un email valide </span>
+</div>    
+<div class="input-field">
+    <input type="text"   placeholder="identifiant de utilisateur" 
+    ngModel name="username"  required #username="ngModel" style="margin-top:-10px;width: 420px;">
+    <i class="fa fa-user" style="margin-top: -20px;" ></i>
+    <span style="color: red;position: absolute;left: 35px;top: 32px;font-size: 14px;width: 340px;" 
+    *ngIf="!username.valid && username.touched" >Entrer  un identifiant valide </span>
+</div>
+<div class="input-field">
+    <input type="number" class="form-control" placeholder="Numero de telephone" 
+    ngModel name="telephone"  required #telephone="ngModel" style="margin-top:-10px;width: 255px;">
+    <i class="fa fa-phone" style="margin-top: -15px;" ></i>
+    <span style="color:red ;position: absolute;left: 35px;top:30px ;font-size: 14px; width: 340px;" 
+        *ngIf="!telephone.valid && telephone.touched" >Entrer  un numero valide </span>
+    </div> 
+<div class="form-group">
+    <div id="label1">
+    <label class="bmd-label-floating" style="position: absolute;top:235px;left: 285px;">Sexe</label></div>
+    <input type="radio" [(ngModel)]="gender" value="homme" name="gender" id="homme1">
+     <label id="label-Homme" >Homme</label> 
+    <input type="radio" [(ngModel)]="gender" value="femme" name="gender" id="femme1">
+     <label id="label-Femme">Femme</label>
+    <span style="color:red ;position: absolute;left: 312px;top:190px ;font-size: 14px; width: 340px;" 
+    *ngIf="!gender.valid && gender.touched" >choisir l'un des choix </span>
+    </div>     
+<div class="input-field">
+    <input  id="password-field" type="password"  placeholder="Mot de passe" 
+    ngModel name="pwd"  required #pwd="ngModel"
+     style="margin-top:-10px;width: 250px;">
+    <i class="fa fa-lock icon" style="margin-top: -15px;"></i>
+    <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+    style="position:absolute;margin-top: -2px;margin-left: 220px;" ></span>
+    <span style="color:red ;position: absolute;left: 35px;top:32px ;font-size: 14px; width: 340px;" 
+        *ngIf="!pwd.valid && pwd.touched" >Entrer  un mot de passe valide </span>
+</div>
+<div class="input-field">
+<input  id="password-field2" type="password"  placeholder="Confirmation" 
+ngModel name="pwdc"  required #pwdc="ngModel" 
+ style="margin-top:-80px;margin-left:275px;width: 250px;">
+<i class="fa fa-lock icon" style="margin-top: -85px;margin-left: 280px;"></i>
+<span toggle="#password-field2" class="fa fa-fw fa-eye-slash  toggle-password2"
+style="position:absolute;margin-top: -73px;margin-left: 495px;" ></span>
+<span style="color:red ;position: absolute;left: 312px;top:-38px ;font-size: 14px; width: 340px;" 
+*ngIf="!pwdc.valid && pwdc.touched" >Entrer  un mot de passe valide </span>
+</div>
+<span style="color:red ;position: absolute;margin-left: 280px;top:266px ;font-size: 14px; width: 340px;" 
+*ngIf="(test==true)">verifier le mot de passe </span>
+<div >
+    <button class="btn1"> Registre </button>
+
+    </div >
+    <p align="center" id="btnSignUp1">Vous avez déja un compte ? <a routerLink="/Login" id="btnSignUp">S'identifier</a></p>
+</form> 
+</div>
+</div>
+</div>
+</div>
+</header>
+</div>
+</div>
+<div id="cache">
+
+</div>
+</body>
+</html>

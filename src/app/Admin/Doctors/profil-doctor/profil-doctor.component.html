@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Welcome Admin</title>
+
+<link rel="stylesheet" href="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.9.97/css/materialdesignicons.min.css">
+<link rel="shortcut icon" href="./assets/imagesD/favicon.png" />
+</head>
+<body>
+    <div class="vertical"></div>
+    <!-- Navbar verticale a gauche -->
+<div class="container-scroller">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+            <a class="sidebar-brand brand-logo" routerLink="/Admin">
+            <img src="./assets/images/icone eye.png" id="iconeLogo"> 
+            <h6 id="titre">HUMAIN EYES</h6></a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item profile">
+            <div class="profile-desc">
+                <div class="profile-pic">
+                <div class="count-indicator">
+                    <img class="img-xs rounded-circle " src={{imageAdmin}} id="imageAdmin">
+                    <div class="enLigne"><span class="count bg-success"></span></div>
+                </div>
+                </div>
+            </div>  
+            <br><br><br>
+            <div class="profile" style="margin-top: 15px;">
+            <h5 class="mb-0 font-weight-normal">{{admin.username}} </h5>
+            <span>{{admin.role}}</span>
+            </div> 
+            </li><br><br><br>
+            <li class="nav-item nav-category">
+            <span class="nav-link">Navigation</span>
+            </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" routerLink="/Admin">
+                <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+                </span>
+                <span class="menu-title">Dashboard</span>
+            </a>
+            </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#doctors" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-icon">
+                    <i class="material-icons">
+                        face
+                        </i>
+    
+                </span>
+                <span class="menu-title">Drs ophtalmologues</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="doctors">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                     <a class="nav-link" routerLink="/All-Doctors">Tous Les Docteurs</a></li>
+                <li class="nav-item" *ngIf="roleMedical">
+                     <a class="nav-link"  routerLink="/Add-Doctor">Ajouter Dr Ophtalmolgue</a></li>
+                </ul>
+            </div>
+            </li>
+            <li class="nav-item menu-items"  *ngIf="roleDigital">
+                <a class="nav-link" data-toggle="collapse"   routerLink="/Drs" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-icon">
+                        <i  class="material-icons">
+                            groups
+                            </i>
+                        </span>
+                    <span class="menu-title">Médecins </span>
+                </a>
+              <!-- <div class="collapse" id="N-doctors">
+                    <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" routerLink="/All-Doctors">All Doctors</a></li>
+                    <li class="nav-item"> <a class="nav-link"  routerLink="/Add-Doctor">Add Doctor</a></li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="/Profil-Doctors">Doctor Profil  </a></li>
+        
+                    </ul>
+                </div>--> 
+                </li>
+           
+            <li class="nav-item menu-items"  *ngIf="roleDigital">
+            <a class="nav-link" data-toggle="collapse" routerLink="/All-Patients" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-icon">
+                    <i class="material-icons">
+                        people
+                    </i>
+                </span>
+                <span class="menu-title">Patients</span>
+               
+            </a>
+           <!--href="#patients"
+               <div class="collapse" id="patients">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">All Patients</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Edit Patients</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Profil Patients </a></li>
+    
+                </ul>
+            </div>--> 
+            </li>
+            <li class="nav-item menu-items"  *ngIf="roleDigital">
+                <a class="nav-link" data-toggle="collapse" href="#IAModele" aria-expanded="false" aria-controls="auth">
+                    <span class="menu-icon">
+                    <i class="material-icons">
+                        psychology
+                        
+                        </i>
+                    </span>
+                    <span class="menu-title">Modéles IA</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="IAModele">
+                    <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" routerLink="/IA_Modeles"> Modéles </a></li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="/Ajouter"> Ajouter Modéle IA </a></li>            
+                    </ul>
+                </div>
+                </li>
+            <li class="nav-item menu-items" *ngIf="roleMedical">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <span class="menu-icon">
+                <i class="material-icons">
+                    leaderboard
+                    
+                    </i>
+                </span>
+                <span class="menu-title">Statistiques</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" routerLink="/Satistiques_App">  Application </a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/Satistiques_Dr"> Docteurs </a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/Satistiques_Patient"> Patients </a></li>
+                </ul>
+            </div>
+            </li>
+            <li class="nav-item menu-items"  *ngIf="roleDigital">
+                <a class="nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="auth" routerLink="/Espace_Stockage">
+                    <span class="menu-icon">
+                        <i class="fa fa-archive" aria-hidden="true"></i>
+                    </span>
+                    <span class="menu-title">Espace de Stockage</span>
+                </a>       
+            </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" routerLink="">
+                <span class="menu-icon">
+                <i class="material-icons">
+                    power_settings_new
+                    </i>
+                </span>
+                <span class="menu-title">Déconnexion</span>
+            </a>
+            </li>
+        
+        </ul>
+        </nav>
+  <!-- fin de nav bar verticale a gauche  -->
+  <div class="main-panel" style="position: fixed;">
+  <div class="row">
+    <div class="col-12 grid-margin">
+       <div class="card">
+            <div class="card-body">
+                 <h3 id="titre1">&nbsp;Profile Docteur &nbsp;
+                  <i class="fa fa-angle-right fa-1x" aria-hidden="true"></i>
+                 <img src="./assets/imagesD/home.svg" alt=""></h3>
+              <h5 id="titre2"><i class="fa fa-angle-right fa" aria-hidden="true"></i>&nbsp;&nbsp;Drs ophtalmologues</h5>
+              <h5 id="titre3"><i class="fa fa-angle-right fa" aria-hidden="true"></i>&nbsp;&nbsp;Tous Les Doctor </h5>
+              <h5 id="titre4"><i class="fa fa-angle-right fa" aria-hidden="true"></i>&nbsp;&nbsp;Profile Doctor </h5>
+            </div>
+          </div>
+        </div>
+      </div>                        
+  </div>
+</div>  
+<!-- Navbar Horizontal -->
+<div class="container-fluid page-body-wrapper">
+
+  <nav class="navbar p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="./assets/imagesD/logo-mini.svg" alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+      </button>
+      <ul class="navbar-nav w-100">
+          <li class="nav-item w-100">
+          <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
+              <input type="text" class="form-control" placeholder="Search ...">
+          </form>
+          </li>
+      </ul>
+      <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown d-none d-lg-block">
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
+              <h6 class="p-3 mb-0">Projects</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-file-outline text-primary"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1">Software Development</p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-web text-info"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1">UI Development</p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-layers text-danger"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1">Software Testing</p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <p class="p-3 mb-0 text-center">See all projects</p>
+          </div>
+          </li>
+        
+          <li class="nav-item dropdown border-left">
+          <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-bell"></i>
+              <span class="count bg-danger"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <h6 class="p-3 mb-0">Notifications</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-calendar text-success"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject mb-1">Event today</p>
+                  <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-settings text-danger"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject mb-1">Settings</p>
+                  <p class="text-muted ellipsis mb-0"> Update dashboard </p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-link-variant text-warning"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject mb-1">Launch Admin</p>
+                  <p class="text-muted ellipsis mb-0"> New admin wow! </p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <p class="p-3 mb-0 text-center">See all notifications</p>
+          </div>
+          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+              <div class="navbar-profile">
+              <img class="img-xs rounded-circle" src={{imageAdmin}} alt="">
+              <p class="mb-0 d-none d-sm-block navbar-profile-name">{{admin.username}}</p>
+              <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+              </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+              <h6 class="p-3 mb-0">Profile</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-settings text-success"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                <a class="preview-subject mb-1" routerLink="/Profile-Admin"
+                style="text-decoration: none;color: #fff;">Profile</a>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-logout text-danger"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                <p class="preview-subject mb-1">
+                    <a (click)="logout()" style="text-decoration: none;">
+                         Déconnexion</a></p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+            
+          </div>
+          </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-format-line-spacing"></span>
+      </button>
+      </div>
+  </nav>
+</div>
+
+ <!-- body de page -->
+ 
+
+<br><div id="tab"> 
+<div class="card" style="background-color: #1A202E;">
+<div class="card-body">
+<div class="row">
+<div class="col-9">
+<div class="d-flex align-items-center align-self-start">
+<mat-tab-group id="headerParam">
+<mat-tab >
+    <ng-template mat-tab-label>
+        <mat-icon style="color: #fff;">
+            <i  class="material-icons">face</i> </mat-icon>
+        
+        <span  style="color: #fff;">  &nbsp;&nbsp;&nbsp;&nbsp; À propos de moi</span> 
+    </ng-template>
+    <br><br>
+    <span id="line"> Nom  Dr &nbsp;:</span> <span id="text-muted">John Smith</span> <br><br>
+    <span id="line">  Numéro de Télephone  &nbsp;:</span> <span id="text-muted"> 264-625-2583 </span><br><br>
+    <span id="line">  Adresse Email  &nbsp;:</span> <span id="text-muted"> Doctor.email@gmail.com</span><br><br>
+    <span id="line">  Sexe  &nbsp;:</span> <span id="text-muted"> Homme</span><br><br>
+    <span id="line">  Date d'inscripition   &nbsp;:</span> <span id="text-muted"> 2022/03/11 </span><br><br>
+
+
+</mat-tab>
+<mat-tab >
+    <ng-template mat-tab-label>
+        <mat-icon style="color: #fff;">
+            <i  class="material-icons">  stacked_bar_chart</i></mat-icon>
+        <span  style="color: #fff;"> &nbsp;&nbsp;Activiter de Dr</span> 
+    </ng-template> 
+        <div id="main1" ></div>
+    </mat-tab>
+<mat-tab >
+    <ng-template mat-tab-label>
+        <mat-icon style="color: #fff;">
+            <i  class="material-icons">settings</i></mat-icon>
+        
+        <span  style="color: #fff;"> &nbsp;&nbsp;Paramètres</span> 
+    </ng-template> 
+       <br>
+    <form class="forms-sample">
+        <div class="form-group" style="width:80%">
+          <label for="exampleInputUsername1">Nom et prénom  </label>
+          <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Nom  Dr" [disabled]=test5 
+          value=" rahma romdhani" style="color: #fff;" >
+          <span >
+           <img src="./assets/images/e1.png" id="line1"  (click)="testIcone5()">
+            </span>
+            
+        </div>
+    
+        <div class="form-group" style="width:80%">
+          <label for="exampleInputEmail1">Adresse Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" [disabled]=test3 
+          value="Docteur.exemple@gmail.com" style="color: #fff;" >
+          <span >
+            <img src="./assets/images/e1.png" id="line3"  (click)="testIcone3()">
+             </span>
+        </div>
+        <div class="form-group" style="width:80%">
+            <label for="exampleInputUsername1">5liha matmishech bch na3mlha liste deraulte mtaa sexe </label>
+            <input type="text" class="form-control" id="prenom" placeholder="Prenom " [disabled]=test4 
+            value="sousse , hammem sousse" style="color: #fff;" >
+            <span >
+            <img src="./assets/images/e1.png" id="line4"  (click)="testIcone()">
+             </span>
+        </div>
+        <div class="form-group" style="width:80%">
+            <label for="exampleInputUsername1">Numéro Télephone</label>
+            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="numero Télephone" [disabled]=test 
+            value="123456789" style="color: #fff;" >
+            <span >
+             <img src="./assets/images/e1.png" id="line5" (click)="testIcone1()">
+              </span>
+              
+          </div>
+          <div class="form-group" style="width:80%">
+            <label for="exampleInputPassword1">Password</label>
+          <input id="password-field" type="password" class="form-control"   placeholder="Password" 
+          value="123456789" style="color: #fff;" >
+          <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+          style="position:absolute;margin-top: -27px;margin-left: 508px;" ></span>
+     
+          <span >
+             <img src="./assets/images/e1.png" id="line2"  (click)="testIcone()">
+              </span>
+             
+          </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+      </form>
+    </mat-tab>
+</mat-tab-group>
+   </div>
+ </div>       
+</div>
+</div>
+</div>
+</div>
+  <!-- tabs par html et css -->
+ <!-- 
+   <br><br>
+<div class="container3">
+    <input type="radio" name="radio" class="radioInput" id="tab1" checked hidden/>
+    <input type="radio" name="radio" class="radioInput" id="tab2" hidden/>
+    <input type="radio" name="radio" class="radioInput" id="tab3" hidden/>
+    
+    <div class="tabHeader-container3">
+      <label for="tab1" class="tabHeader">Tab 1</label>
+      <label for="tab2" class="tabHeader">Tab 2</label>
+      <label for="tab3" class="tabHeader">Tab 3</label>
+    </div>
+    
+    <span class="activeTab-indicator"></span>
+    
+    <div class="tabContent-container3">
+      <div class="tabContent tab1-content">
+
+        <br><br>
+        <span id="line"> Nom  Dr &nbsp;:</span> <span id="text-muted">John Smith</span> <br><br>
+        <span id="line">  Numéro de Télephone  &nbsp;:</span> <span id="text-muted"> 264-625-2583 </span><br><br>
+        <span id="line">  Adresse Email  &nbsp;:</span> <span id="text-muted"> Doctor.email@gmail.com</span><br><br>
+        <span id="line">  Sexe  &nbsp;:</span> <span id="text-muted"> Homme</span><br><br>
+        <span id="line">  Date d'inscripition   &nbsp;:</span> <span id="text-muted"> 2022/03/11 </span><br><br>
+    
+      
+      </div>
+      
+      <div class="tabContent tab2-content">
+        <div id="main" ></div>
+      </div>
+      
+      <div class="tabContent tab3-content">
+      
+        <br>
+    <form class="forms-sample" >
+        <div class="form-group" style="width:80%">
+          <label for="exampleInputUsername1">Nom Dr </label>
+          <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Nom  Dr" [disabled]=test5 
+          value=" rahma romdhani" style="color: #fff;" >
+          <span >
+           <img src="./assets/images/e1.png" id="line1"  (click)="testIcone5()">
+            </span>
+            
+        </div>
+    
+        <div class="form-group" style="width:80%">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" [disabled]=test3 
+          value="Docteur.exemple@gmail.com" style="color: #fff;" >
+          <span >
+            <img src="./assets/images/e1.png" id="line3"  (click)="testIcone3()">
+             </span>
+        </div>
+        <div class="form-group" style="width:80%">
+            <label for="exampleInputUsername1">Adresse</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Prenom " [disabled]=test4 
+            value="sousse , hammem sousse" style="color: #fff;" >
+            <span >
+            <img src="./assets/images/e1.png" id="line4"  (click)="testIcone2()">
+             </span>
+        </div>
+        <div class="form-group" style="width:80%">
+            <label for="exampleInputUsername1">Numéro Télephone</label>
+            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="numero Télephone" [disabled]=test 
+            value="123456789" style="color: #fff;" >
+            <span >
+             <img src="./assets/images/e1.png" id="line5" (click)="testIcone4()">
+              </span>
+              
+          </div>
+          <div class="form-group" style="width:80%">
+            <label for="exampleInputPassword1">Password</label>
+          <input id="password-field" type="password" class="form-control"   placeholder="Password" 
+          value="123456789" style="color: #fff;" >
+          <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+          style="position:absolute;margin-top: -27px;margin-left: 508px;" ></span>
+     
+          <span >
+             <img src="./assets/images/e1.png" id="line2"  (click)="testIcone1()">
+              </span>
+             
+          </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+      </form>
+      </div>
+    </div>
+  </div>
+  Fin de tabs-->
+
+<div class="container1" style="position: fixed;">
+    <div class="cover-photo">
+      <img src="./assets/doctors/d1.png" class="profile1">
+    </div>
+    <br><br>
+    <div class="colorBody">
+    <div id="user-name">DR. John Smith</div>
+    <div id="name-center">Docteur Ophtalmologue Expert </div>
+    <p class="about" > 456, Estern evenue, Courtage area, <br >New York </p>
+    <div id="phone"><span  class="phone">
+        <i  class="material-icons">phone</i> &nbsp;264-625-2583</span></div>
+ </div>
+</div>
+<script src="./assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="./assets/vendors/progressbar.js/progressbar.min.js"></script>
+<script src="./assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+<script src="./assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="./assets/js/off-canvas.js"></script>
+<script src="./assets/js/hoverable-collapse.js"></script>
+<script src="./assets/js/misc.js"></script>
+<script src="./assets/js/settings.js"></script>
+<script src="./assets/js/todolist.js"></script>
+<script src="./assets/js/dashboard.js"></script>
+<script src="./assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="./assets/js/chart.js"></script>
+
+    <script src="./assets/js/hoverable-collapse.js"></script>
+    <script src="./assets/js/misc.js"></script>
+    <script src="./assets/js/settings.js"></script>
+    <script src="./assets/js/todolist.js"></script>
+</body>
+</html>
+

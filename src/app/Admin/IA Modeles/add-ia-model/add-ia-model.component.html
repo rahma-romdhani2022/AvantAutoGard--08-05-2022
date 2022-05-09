@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Welcome Admin</title>
+<link rel="stylesheet" href="https://cdn.boomcdn.com/libs/owl-carousel/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.9.97/css/materialdesignicons.min.css">
+<link rel="shortcut icon" href="./assets/imagesD/favicon.png" />
+
+<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet"></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+<!-- include FilePond library -->
+<script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+<!-- include FilePond plugins -->
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+
+<!-- include FilePond jQuery adapter -->
+<script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+
+
+<body>
+    <div class="vertical"></div>
+    <!-- Navbar verticale a gauche -->
+<div class="container-scroller">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+            <a class="sidebar-brand brand-logo" routerLink="/Admin">
+            <img src="./assets/images/icone eye.png" id="iconeLogo"> 
+            <h6 id="titre">HUMAIN EYES</h6></a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item profile">
+            <div class="profile-desc">
+                <div class="profile-pic">
+                <div class="count-indicator">
+                    <img class="img-xs rounded-circle " src={{imagePath}} id="imageAdmin">
+                    <div class="enLigne"><span class="count bg-success"></span></div>
+                </div>
+                </div>
+            </div>  
+            <br><br><br>
+            <div class="profile" style="margin-top: 15px;">
+            <h5 class="mb-0 font-weight-normal">{{username}} </h5>
+            <span>{{role}}</span>
+            </div> 
+            </li><br><br><br>
+            <li class="nav-item nav-category">
+            <span class="nav-link">Navigation</span>
+            </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" routerLink="/Admin">
+                <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+                </span>
+                <span class="menu-title">Dashboard</span>
+            </a>
+            </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#doctors" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-icon">
+                    <i class="material-icons">
+                        face
+                        </i>
+    
+                </span>
+                <span class="menu-title">Drs ophtalmologues</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="doctors">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                     <a class="nav-link" routerLink="/All-Doctors">Tous Les Docteurs</a></li>
+                <li class="nav-item" *ngIf="roleMedical"> 
+                    <a class="nav-link"  routerLink="/Add-Doctor">Ajouter Dr Ophtalmolgue</a></li>
+                </ul>
+            </div>
+            </li>
+            <li class="nav-item menu-items" *ngIf="roleDigital">
+                <a class="nav-link" data-toggle="collapse"   routerLink="/Drs" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-icon">
+                        <i  class="material-icons">
+                            groups
+                            </i>
+                        </span>
+                    <span class="menu-title">Médecins </span>
+                </a>
+              <!-- <div class="collapse" id="N-doctors">
+                    <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" routerLink="/All-Doctors">All Doctors</a></li>
+                    <li class="nav-item"> <a class="nav-link"  routerLink="/Add-Doctor">Add Doctor</a></li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="/Profil-Doctors">Doctor Profil  </a></li>
+        
+                    </ul>
+                </div>--> 
+                </li>
+           
+            <li class="nav-item menu-items" *ngIf="roleDigital">
+            <a class="nav-link" data-toggle="collapse" routerLink="/All-Patients" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-icon">
+                    <i class="material-icons">
+                        people
+                    </i>
+                </span>
+                <span class="menu-title">Patients</span>
+               
+            </a>
+           <!--href="#patients"
+               <div class="collapse" id="patients">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">All Patients</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Edit Patients</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Profil Patients </a></li>
+    
+                </ul>
+            </div>--> 
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" data-toggle="collapse" href="#IAModele" aria-expanded="false" aria-controls="auth">
+                    <span class="menu-icon">
+                    <i class="material-icons">
+                        psychology
+                        
+                        </i>
+                    </span>
+                    <span class="menu-title">Modéles IA</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="IAModele">
+                    <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" routerLink="/IA_Modeles"> Modéles </a></li>
+                    <li class="nav-item"> <a class="nav-link" routerLink="/Ajouter"> Ajouter Modéle IA </a></li>            
+                    </ul>
+                </div>
+                </li>
+            <li class="nav-item menu-items"  *ngIf="roleMedical">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <span class="menu-icon">
+                <i class="material-icons">
+                    leaderboard
+                    
+                    </i>
+                </span>
+                <span class="menu-title">Statistiques</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" routerLink="/Satistiques_App">  Application </a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/Satistiques_Dr"> Docteurs </a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/Satistiques_Patient"> Patients </a></li>
+                </ul>
+            </div>
+            </li>
+            <li class="nav-item menu-items"  *ngIf="roleDigital">
+                <a class="nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="auth" routerLink="/Espace_Stockage">
+                    <span class="menu-icon">
+                        <i class="fa fa-archive" aria-hidden="true"></i>
+                    </span>
+                    <span class="menu-title">Espace de Stockage</span>
+                </a>       
+            </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" routerLink="">
+                <span class="menu-icon">
+                <i class="material-icons">
+                    power_settings_new
+                    </i>
+                </span>
+                <span class="menu-title">Déconnexion</span>
+            </a>
+            </li>
+        
+        </ul>
+        </nav>
+  <!-- fin de nav bar verticale a guche  -->
+  <div class="main-panel" style="position: fixed;">
+  <div class="row">
+    <div class="col-12 grid-margin">
+       <div class="card">
+            <div class="card-body">
+                 <h3 id="titre1">&nbsp;Ajouter un modéle IA &nbsp;
+                  <i class="fa fa-angle-right fa-1x" aria-hidden="true"></i>
+                 <img src="./assets/imagesD/home.svg" alt=""></h3>
+              <h5 id="titre2"><i class="fa fa-angle-right fa" aria-hidden="true"></i>&nbsp;&nbsp;Modéles IA </h5>
+              <h5 id="titre3"><i class="fa fa-angle-right fa" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter un modéle IA </h5>
+            <!--  **************-->
+
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--code image -->
+<div class="body">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" id="upload" height="120" width="120">
+    
+        <defs>      
+              <style>.a{fill:#f7f7f7;}.b{fill:#e1e5ff;}.c{fill:#476bd4;}.d{fill:#fff;}.e{fill:#29cbae;}</style>
+        </defs>
+        
+        <title>iconUpload</title>
+        <g class="background" data-animator-group="true" data-animator-type="2">
+            <circle class="a" cx="19.9" cy="19.9" r="19.9"/>
+        </g>
+        
+        <polygon class="b progress" points="29.34 15 23.91 9.07 23.91 15 29.34 15"/>
+        
+        <path  class="c" d="M24.06,8.19H13.76A2.85,2.85,0,0,0,10.89,11V29a2.85,2.85,0,0,0,2.87,2.82H27.11A2.85,2.85,0,0,0,30,29V14.69Zm.21,1.38,4.45,4.88H24.27Z"/>
+        
+        <path class="d"  d="M29.2,29A2.08,2.08,0,0,1,27.11,31H13.76A2.08,2.08,0,0,1,11.67,29V11A2.08,2.08,0,0,1,13.76,9h9.73v6.26H29.2Z"/>
+        
+        <g class="arrow" data-animator-group="true" data-animator-type="0">
+        
+            <path class="c" d="M23.32,17.5a4.06,4.06,0,1,0,0,5.74,4,4,0,0,0,0-5.74Zm-2.87,5.82a.64.64,0,0,1-.64-.64V19.6l-.76.76a.64.64,0,0,1-.91-.91L20,17.6l.1-.08,0,0,.06,0,.07,0,.05,0h.25l.06,0,.06,0,.07,0,0,0,.1.08,1.85,1.85a.64.64,0,0,1-.91.91l-.76-.76v3.09a.64.64,0,0,1-.64.64Z"/>
+        </g>
+        
+        <g class="progressLoader" data-animator-group="true" data-animator-type="2">
+          <polygon class="e" points="15 28 15 27 26 27 26 28 15 28"/>
+        </g>
+    
+      </svg>          
+    </div>      
+    <!-- code de button --> 
+ 
+    <div class="inputUpload">
+       
+<div class="holder">
+    <div class="my-pond" name="filepond"></div>
+    </div>
+    <!-- include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    
+    <!-- include FilePond library -->
+    <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+    
+    <!-- include FilePond plugins -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+    
+    <!-- include FilePond jQuery adapter -->
+    <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+    
+    <script>
+      $(function(){
+      
+        // First register any plugins
+        $.fn.filepond.registerPlugin(FilePondPluginImagePreview);
+    
+        // Turn input element into a pond
+        $('.my-pond').filepond();
+    
+        // Set allowMultiple property to true
+        $('.my-pond').filepond('allowMultiple', true);
+      
+        // Listen for addfile event
+        $('.my-pond').on('FilePond:addfile', function(e) {
+            console.log('file added event', e);
+        });
+    
+    //    // Manually add a file using the addfile method
+    //    $('.my-pond').first().filepond('addFile', 'index.html').then(function(file){
+    //      console.log('file added', file);
+    //    });
+      
+      });
+    </script>
+
+    </div>   
+
+</div>  
+</div>
+<form>
+<div id="uploadArea" class="upload-area">
+    <!-- Header -->
+    <div class="upload-area__header">
+      <h1 class="upload-area__title">Téléchargez votre fichier</h1>
+      <hr style="margin-top: 1px;width: 333px;">
+    </div>
+    <!-- End Header -->
+  
+    <!-- Drop Zoon -->
+    <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+      <span class="drop-zoon__icon">
+        <i class='bx bxs-file-image'></i>
+      </span>
+      <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image" draggable="false">
+      <div class="avatar-upload" style="margin-top: -4px;">
+        <div class="avatar-edit" >
+        <input type='file' id="imageUpload" (change)="onSelectFile($event)" class="select-profile-picture"  accept=".png, .jpg, .jpeg" />
+        
+            <label for="imageUpload"></label>
+        </div>
+        <ng-template #close>
+        <div class="avatar-close" >
+         <label (click)="changeImage()" class="csslabel">
+         <i class="fa fa-times" style="color:  #757575; position: absolute;top: 10px;left: 10px;" ></i></label>
+            <label for="imageUpload"></label>
+          </div>
+        </ng-template>
+        <div class="avatar-preview">
+            <!-- bar de pourcentage -->
+            <div class="container1Bar" *ngIf="testSelectedFile == true">
+                <img src="./assets/imagesD/iconeFichier.png" id="iconeFichier">
+          
+                <div class="progress2 progress-moved" >
+                  <div class="progress-bar2"></div>
+                  <div class="loader" >
+                      <!--div class="bar">0</div-->
+                  </div>
+                </div>
+              
+              <div id="closeIcon"><a (click)="supprimerFichier()"><i  style="color: #000;margin-top: 13px;" class="fa fa-times" aria-hidden="true"></i></a></div>
+            </div>
+        <!--img id="imagePreview" src={{image}}-->
+        </div>
+        </div>
+    </div>
+    <!-- End Drop Zoon -->
+  
+    <!-- File Details -->
+    <div id="fileDetails" class="upload-area__file-details file-details">
+      <h3 class="file-details__title">Uploaded File</h3>
+  
+      <div id="uploadedFile" class="uploaded-file">
+        <div class="uploaded-file__icon-container">
+          <i class='bx bxs-file-blank uploaded-file__icon'></i>
+          <span class="uploaded-file__icon-text"></span> <!-- Data Will be Comes From Js -->
+        </div>
+  
+
+      </div>
+    </div>
+    <!-- End File Details -->
+  </div>
+  <div class="upload" style="position: fixed;">
+    <button class="" (click)="boutnClicked()" >
+        <span style="color: #fff;">Submit</span>
+        <div class="success">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 29.756 29.756" style="enable-background:new 0 0 29.756 29.756;" xml:space="preserve">
+          
+        <path d="M29.049,5.009L28.19,4.151c-0.943-0.945-2.488-0.945-3.434,0L10.172,18.737l-5.175-5.173   c-0.943-0.944-2.489-0.944-3.432,0.001l-0.858,0.857c-0.943,0.944-0.943,2.489,0,3.433l7.744,7.752   c0.944,0.943,2.489,0.943,3.433,0L29.049,8.442C29.991,7.498,29.991,5.953,29.049,5.009z"/>
+     </svg>
+          </div>
+      </button>
+ <span id="w">Fait ✓</span>
+</div>
+</form>
+  <!-- End Upload Area -->
+<!-- Navbar Horizontal -->
+<div class="container-fluid page-body-wrapper">
+
+  <nav class="navbar p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="./assets/imagesD/logo-mini.svg" alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+      </button>
+      <ul class="navbar-nav w-100">
+          <li class="nav-item w-100">
+          <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
+              <input type="text" class="form-control" placeholder="recherche ...">
+          </form>
+          </li>
+      </ul>
+      <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown d-none d-lg-block">
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
+              <h6 class="p-3 mb-0">Projects</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-file-outline text-primary"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1">Software Development</p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-web text-info"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1">UI Development</p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-layers text-danger"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1">Software Testing</p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <p class="p-3 mb-0 text-center">See all projects</p>
+          </div>
+          </li>
+         
+          <li class="nav-item dropdown border-left">
+          <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-bell"></i>
+              <span class="count bg-danger"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <h6 class="p-3 mb-0">Notifications</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-calendar text-success"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject mb-1">Event today</p>
+                  <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-settings text-danger"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject mb-1">Settings</p>
+                  <p class="text-muted ellipsis mb-0"> Update dashboard </p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-link-variant text-warning"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                  <p class="preview-subject mb-1">Launch Admin</p>
+                  <p class="text-muted ellipsis mb-0"> New admin wow! </p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <p class="p-3 mb-0 text-center">See all notifications</p>
+          </div>
+          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+              <div class="navbar-profile">
+              <img class="img-xs rounded-circle" src={{imagePath}} alt="">
+              <p class="mb-0 d-none d-sm-block navbar-profile-name">{{username }}</p>
+              <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+              </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+              
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-face text-success"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                <a class="preview-subject mb-1" routerLink="/Profile-Admin"
+                style="text-decoration: none;color: #fff;">Profile</a>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-logout text-danger"></i>
+                  </div>
+              </div>
+              <div class="preview-item-content">
+                <p class="preview-subject mb-1">
+                    <a (click)="logout()" style="text-decoration: none;">
+                         Déconnexion</a></p>
+              </div>
+              </a>
+              <div class="dropdown-divider"></div>
+             
+          </div>
+          </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-format-line-spacing"></span>
+      </button>
+      </div>
+  </nav>
+</div>
+
+  
+<script src="./assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="./assets/vendors/progressbar.js/progressbar.min.js"></script>
+<script src="./assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+<script src="./assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="./assets/js/off-canvas.js"></script>
+<script src="./assets/js/hoverable-collapse.js"></script>
+<script src="./assets/js/misc.js"></script>
+<script src="./assets/js/settings.js"></script>
+<script src="./assets/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="./assets/js/dashboard.js"></script>
+<script src="./assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="./assets/js/chart.js"></script>
+
+    <script src="./assets/js/hoverable-collapse.js"></script>
+    <script src="./assets/js/misc.js"></script>
+    <script src="./assets/js/settings.js"></script>
+    <script src="./assets/js/todolist.js"></script>
+<!-- End custom js for this page -->
+</body>
+</html>
+

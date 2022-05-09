@@ -1,0 +1,115 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+html{
+    background: #1f1e24;
+
+      
+}
+ body {
+  position: absolute;
+        left:300px;
+        margin-top:-115px;
+    min-width: 800px !important;
+	 background: #1f1e24;
+	 height: 200px;
+	 font-family: 'Open Sans', sans-serif;
+}
+ /*.wrapper {
+	 margin: 0 auto;
+	 width: 90%;
+	 margin-top: 15px;
+}
+ .bar {
+	 position: relative;
+	 width: 100%;
+	 height: 48px;
+	 background: rgba(255, 255, 255, 0.1);
+	 margin-bottom: 1.5rem;
+	 border-radius: 40px;
+}
+ .bar .bar-info {
+	 border-radius: 100px;
+	 padding: 0.75rem;
+	 background: #fd7473;
+	 color: white;
+	 width: 10%;
+	 position: relative;
+	 height: 50px;
+	 transition: width 3.3s ease-in-out;
+}
+ .bar .bar-info .percent {
+	 float: right;
+}
+ .bar .bar-info.html {
+	 background: linear-gradient(#fd7473, #fc688e), #fd7473;
+}
+ .bar .bar-info.css {
+	 background: linear-gradient(#fec951, #fcad44), #fec951;
+}
+ .bar .bar-info.js {
+	 background: linear-gradient(#47b8e0, #28befa), #47b8e0;
+}
+ .bar .bar-info.ps {
+	 background: linear-gradient(#9f68d0, #bb68d0), #9f68d0;
+}
+ */
+ 
+.wrapper {
+    width: 520px;
+    max-width: 100%;
+  }
+  
+  .progress-bar {
+    height: 30px;
+    width: 100%;
+    background-color: #BFADA3;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 2px 0 10px inset rgba(0,0,0,0.2);
+    position: relative;
+  }
+  
+  * + .progress-bar {
+    margin-top: 2rem;
+  }
+  
+  .bar {
+    width: 0;
+    height: 100%;
+    background-color: #B6244F;
+    
+    /*Lollipop background gradient*/
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, .2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, .2) 50%,
+      rgba(255, 255, 255, .2) 75%,
+      transparent 75%,
+      transparent
+    );
+   
+    background-size: 30px 30px;
+    animation: move 2s linear infinite;
+    box-shadow: 2px 0 10px inset rgba(0,0,0,0.2);
+    transition: width 2s ease-out;
+  }
+  
+  /*Lollipop background gradient animation*/
+  @keyframes move {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 30px 30px;
+    }
+  }
+  
+  .perc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: bold;
+  }

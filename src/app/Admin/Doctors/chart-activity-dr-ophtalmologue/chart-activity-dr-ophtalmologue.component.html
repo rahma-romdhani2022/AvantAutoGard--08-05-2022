@@ -1,0 +1,86 @@
+<div class="container">
+    <input type="radio" name="radio" class="radioInput" id="tab1" checked hidden/>
+    <input type="radio" name="radio" class="radioInput" id="tab2" hidden/>
+    <input type="radio" name="radio" class="radioInput" id="tab3" hidden/>
+    
+    <div class="tabHeader-container">
+      <label for="tab1" class="tabHeader">Tab 1</label>
+      <label for="tab2" class="tabHeader">Tab 2</label>
+      <label for="tab3" class="tabHeader">Tab 3</label>
+    </div>
+    
+    <span class="activeTab-indicator"></span>
+    
+    <div class="tabContent-container">
+      <div class="tabContent tab1-content">
+
+        <br><br>
+        <span id="line"> Nom  Dr &nbsp;:</span> <span id="text-muted">John Smith</span> <br><br>
+        <span id="line">  Numéro de Télephone  &nbsp;:</span> <span id="text-muted"> 264-625-2583 </span><br><br>
+        <span id="line">  Adresse Email  &nbsp;:</span> <span id="text-muted"> Doctor.email@gmail.com</span><br><br>
+        <span id="line">  Sexe  &nbsp;:</span> <span id="text-muted"> Homme</span><br><br>
+        <span id="line">  Date d'inscripition   &nbsp;:</span> <span id="text-muted"> 2022/03/11 </span><br><br>
+    
+      
+      </div>
+      
+      <div class="tabContent tab2-content">
+        <div id="main" ></div>
+      </div>
+      
+      <div class="tabContent tab3-content">
+      
+        <br>
+    <form class="forms-sample" >
+        <div class="form-group" style="width:80%">
+          <label for="exampleInputUsername1">Nom Dr </label>
+          <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Nom  Dr" [disabled]=test5 
+          value=" rahma romdhani" style="color: #fff;" >
+          <span >
+           <img src="./assets/images/e1.png" id="line1"  (click)="testIcone5()">
+            </span>
+            
+        </div>
+    
+        <div class="form-group" style="width:80%">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" [disabled]=test3 
+          value="Docteur.exemple@gmail.com" style="color: #fff;" >
+          <span >
+            <img src="./assets/images/e1.png" id="line3"  (click)="testIcone3()">
+             </span>
+        </div>
+        <div class="form-group" style="width:80%">
+            <label for="exampleInputUsername1">Adresse</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Prenom " [disabled]=test4 
+            value="sousse , hammem sousse" style="color: #fff;" >
+            <span >
+            <img src="./assets/images/e1.png" id="line4"  (click)="testIcone2()">
+             </span>
+        </div>
+        <div class="form-group" style="width:80%">
+            <label for="exampleInputUsername1">Numéro Télephone</label>
+            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="numero Télephone" [disabled]=test 
+            value="123456789" style="color: #fff;" >
+            <span >
+             <img src="./assets/images/e1.png" id="line5" (click)="testIcone4()">
+              </span>
+              
+          </div>
+          <div class="form-group" style="width:80%">
+            <label for="exampleInputPassword1">Password</label>
+          <input id="password-field" type="password" class="form-control"   placeholder="Password" 
+          value="123456789" style="color: #fff;" >
+          <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+          style="position:absolute;margin-top: -27px;margin-left: 508px;" ></span>
+     
+          <span >
+             <img src="./assets/images/e1.png" id="line2"  (click)="testIcone1()">
+              </span>
+             
+          </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+      </form>
+      </div>
+    </div>
+  </div>

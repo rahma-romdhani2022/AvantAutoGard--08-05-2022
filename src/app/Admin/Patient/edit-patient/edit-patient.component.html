@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+   <div id="alignement">
+    <div class="dark-edition">
+ 
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                
+                <div class="card-body">
+                  
+      <form style="margin-top: -42px;">
+   <br><br>
+        <div class="container">
+
+          <div class="avatar-upload">
+              <div class="avatar-edit">
+                  <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+              
+                       <label for="imageUpload"></label>
+                    
+
+              </div>
+              <div class="avatar-preview">
+                  <div id="imagePreview" style="background-image: url(./assets/imagesD/faces/user.jpg);">
+                  </div>
+              </div>
+          </div>
+        </div>
+                            <div class="row" style="margin-top: -38px;">
+                      <div class="col-md-6">
+                        <div class="form-group" >
+                          <label class="bmd-label-floating" style="margin-left: -30px;">Nom Patient  </label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating" style="margin-left: -33px; " >Prénom Patient </label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating" style="margin-left: -30px;margin-bottom: 6px;">Adresse Email </label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating" style="margin-left: -33px;margin-bottom: 6px;">Numéro de Télephone</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating" style="margin-left: -30px;margin-bottom: 6px;">Réference</label>
+                          <input type="number" class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating" style="margin-left: -33px;margin-bottom: -2px;">Date de naissance </label><div id="date1">
+                          <input type="date" name="dateofbirth" id="dateofbirth" style="color: #fff"
+                          value="2018-07-22" min="2018-01-01" max="2018-12-31"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            
+                            <label class="bmd-label-floating" style="margin-left: -33px;top: 1px;">Genere</label>
+                            <input type="radio" name="sex" id="male"><label for="male">Homme</label>
+                            <input type="radio" name="sex" id="female"><label for="female" checked=true>Femme</label>
+                          
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+                   
+                    <div align="center"> 
+                    <button class="btn btn-success" (click) = "onClear()">Save</button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-danger" (click)="onClose()" >Cancel</button></div>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>  
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  </body>
+  </html>

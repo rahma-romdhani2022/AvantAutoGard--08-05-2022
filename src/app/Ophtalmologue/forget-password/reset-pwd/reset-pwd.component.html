@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a routerLink="" id="btnAccueil"><i class="fa fa-home"></i>&nbsp; Accueil</a>
+<div class="container">
+
+<div class="col-md-4 col-md-offset-4">
+    <div class="panel-body">
+<div class="text-center">
+<h3><i class="fa fa-lock fa-4x"></i></h3>
+<h2 class="text-center">Mot de passe oublié ?</h2>
+    <br>
+<div class="panel-body">
+<form class="form">                        
+        <div class="input-field">
+<input type="email"   placeholder="adresse email " 
+ngModel name="nom"  required #nom="ngModel" width="100px">
+<i class="fa fa-envelope" style="margin-top: -25px;margin-left: 1px;" ></i><br>
+<span style="color:red ;position: absolute;left: 10px;width: 340px;" 
+*ngIf="!nom.valid && nom.touched" >Entrer  un email  valide </span>
+</div>
+<div class="form-group" ><br><br><br>
+<button type="submit" class="btn btn-primary float-right" style="margin-left: 20px;margin-top: -55px;"> Envoyer</button>
+<button type="submit" class="btn btn-danger btn-rounded" routerLink="/ForgetPassword" 
+style="margin-left: 115px;;margin-top: -55px;text-decoration: none;">Annuler</button>
+</div>
+<a  routerLink="/Registre" id="signup"> Créer un nouveau compte ?  </a>
+<a  routerLink="/Login" id="signin"> Connexion </a>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

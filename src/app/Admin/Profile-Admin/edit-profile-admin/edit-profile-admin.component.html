@@ -1,0 +1,69 @@
+<!--form (ngSubmit)="modifierProfileAdmin(form)" #form=ngForm>
+    
+<div class="containerEditProfil">
+
+<div class="avatar-upload">
+<div class="avatar-edit">
+ 
+<input type='file' id="imageUpload" (change)="onSelectFile($event)" 
+class="select-profile-picture"  accept=".png, .jpg, .jpeg" />
+
+<label for="imageUpload"></label>
+
+
+</div>
+<div class="avatar-preview">
+<img id="imagePreview" src={{imageAdmin}}>
+</div>
+</div>
+</div>
+    <div class="row">
+<div class="col-md-6">
+<div class="form-group">
+    <label class="bmd-label-floating">Nom et Prénom </label>
+    <input type="text" class="form-control"   [(ngModel)]=admin.username ngModel name="usename" 
+    required #username="ngModel" style="color :#fff; width: 275px;"> 
+    <span style="color:#e54f4f ;position: absolute;margin-left: 2px;width: 340px;top:62px;"
+    *ngIf="!username.valid && username.touched">Entrer  identifiant  valide </span>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-6">
+    <div class="form-group">
+        <label class="bmd-label-floating">Adresse Email </label>
+        <input type="text" class="form-control"   [(ngModel)]=admin.email ngModel name="email" 
+        required #email="ngModel" style="color :#fff; width: 275px;"> 
+        <span style="color:#e54f4f ;position: absolute;margin-left: 2px;width: 340px;top:62px;"
+        *ngIf="!email.valid && email.touched">Entrer  adresse email  valide </span>
+    </div>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+    <label class="bmd-label-floating">Mot de passe</label>
+    <input id="password-field" type="password" 
+    ngModel name="pwd"  required #pwd="ngModel" class="form-control"
+    style="color :#fff; width: 275px;">
+    <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+    style="position:absolute;margin-top: -27px;margin-left: 250px;" ></span>
+    <span style="color: #e54f4f; position: absolute;left: 1px;top: 63px;font-size: 14px; width: 340px;" 
+    *ngIf="!pwd.valid && pwd.touched" >Entrer  un mot de passe valide </span>
+</div>
+</div>
+</div>
+<br><br><br>
+<div align="center" id="btnSave"> 
+<button class="btn btn-success" >Valider</button>&nbsp;&nbsp;&nbsp;
+</div>
+<div class="clearfix"></div>
+</form>
+<div id="bouttonAnnuler">
+<button class="btn btn-danger" (click)="clicker()" >Annuler</button>
+</div>
+<router-outlet></router-outlet>-->
+<!-- Rotating card -->
+<!-- Rotating card -->
+<!--Rotating card-->

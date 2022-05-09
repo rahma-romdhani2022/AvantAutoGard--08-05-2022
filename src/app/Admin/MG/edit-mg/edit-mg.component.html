@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<div id="alignement">%
+<div class="dark-edition">
+
+<div class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-8">
+<div class="card">
+
+<div class="card-body">
+
+<form (ngSubmit)="modifierProfile(fl)" #fl=ngForm>
+
+<div class="container">
+
+<div class="avatar-upload">
+<div class="avatar-edit">
+<input type='file' id="imageUpload" (change)="onSelectFile($event)" 
+class="select-profile-picture"  accept=".png, .jpg, .jpeg" />
+
+      <label for="imageUpload"></label>
+  
+
+</div>
+<div class="avatar-preview">
+  <img id="imagePreview" src={{imagePath2}}>
+</div>
+</div>
+</div>
+          <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Nom et Prénom </label>
+        <input type="text" class="form-control"   [(ngModel)]=user.nomPrenom ngModel name="nom" 
+          required #nom="ngModel" style="color :#fff"> 
+        <span style="color:#e54f4f ;position: absolute;margin-left: 2px;width: 340px;top:62px;"
+        *ngIf="!nom.valid && nom.touched">Entrer  nom  valide </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating"> Adresse Email </label>
+        <input type="text" class="form-control"  [(ngModel)]=user.email ngModel name="email" 
+         required #email="ngModel" style="color :#fff">
+        <span style="color:#e54f4f  ;position: absolute;margin-left: 2px;width: 340px;top: 62px;"
+        *ngIf="!email.valid && email.touched">Entrer  email  valide </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Identifiant de utilisateur  </label>
+        <input type="text" class="form-control"   [(ngModel)]=user.username 
+        ngModel name="username"  required #username="ngModel" style="color :#fff">
+        <span style="color:#e54f4f ;position: absolute;margin-left: 2px;width: 340px;top: 62px;"
+        *ngIf="!username.valid && username.touched">Entrer  un identifiant   valide </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <div id="label1">
+            <br>
+        <label class="bmd-label-floating" style="margin-left: 0px;margin-top: 15px;">Gendre</label></div>
+        <input type="radio" [(ngModel)]="gender" value="homme" name="gender" id="homme1"> 
+        <label id="label-Homme" >Homme</label> 
+        <input type="radio" [(ngModel)]="gender" value="femme" name="gender" id="femme1">
+         <label id="label-Femme">Femme</label>
+
+      
+      </div>
+    </div>
+  
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Numero de télephone</label>
+        <input  type="number" [(ngModel)]="user.telephone" ngModel name="telephone"  required #telephone="ngModel" class="form-control">
+        <span style="color: #e54f4f; position: absolute;left: 1px;top: 63px;font-size: 14px; width: 340px;" 
+        *ngIf="!telephone.valid && telephone.touched" >Entrer  un numero de telephone valide </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Specialite</label>
+        <input   type="text" [(ngModel)]="user.specialite" ngModel name="specialite"  required #specialite="ngModel" 
+         class="form-control">
+      </div>
+      <span style="color:#e54f4f ;position: absolute;left: 18px;top:72px ;font-size: 14px; width: 340px;" 
+      *ngIf="!specialite.valid && specialite.touched" >Entrer  un specialite  valide </span>
+      </div>
+  </div>
+  <br><br><br>
+  <div align="center" id="btnSave"> 
+  <button class="btn btn-success" type="submit">Valider</button>&nbsp;&nbsp;&nbsp;
+ </div>
+  <div class="clearfix"></div>
+</form>
+<div id="bouttonAnnuler">
+<button class="btn btn-danger" (click)="onClose()" >Annuler</button>
+</div>
+</div>  
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>  
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<br><br><br><br>
+    <!--enctype="multipart/form-data"-->
+<form  (ngSubmit)="modifierProfile(f)" #f=ngForm>
+<div class="container rounded bg-white mt-4" style="width: 900px;height: 406px;">
+<div class="row" >
+<div class="col-md-4 border-right">
+<div class="d-flex flex-column align-items-center text-center p-3 py-5">
+  <!--<div class="avatar-upload" style="margin-top: -10px;">
+        <div class="avatar-edit">
+        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" >
+        
+            <label for="imageUpload"></label>
+        
+        
+        </div>
+        <div class="avatar-preview">
+        <div id="imagePreview" style="background-image: url(./assets/imagesD/faces/user.jpg);">
+        </div>
+        </div>
+    </div>-->
+        <!--<input type="file" (change)="onFileChanged($event)" style="position: relative;
+        top:10px;left: 10px;">-->
+    
+    <br><br><br><br><br><br><br><br><br>
+        <span class="font-weight-bold" style="font-size: 27px;">{{user.nomPrenom}}</span>
+        <span class="text-black-50">{{user.email}}</span>
+        <input type="file" name="imageUpload" id="imageUpload" 
+        (change)="onFileChanged($event)" />
+    
+                     
+
+
+
+                   <!-- <img class="rounded-circle mt-5" src="./assets/images/pfemme.png" id="image1"><br>
+                    <span class="font-weight-bold">Nom-Ophtalmolgue</span>
+                    <span class="text-black-50">adresse-email@gmail.com</span>
+                   <span>United States</span> -->
+                       
+</div>
+</div>
+<div class="col-md-8">
+<div class="p-3 py-5">
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="d-flex flex-row align-items-center back">
+        <i style="top: 143px;left: 562px;position: absolute;" class="fa fa-long-arrow-left mr-1 mb-1"></i>
+        <h6 style="top: 140px;left:580px;position: absolute;">  &nbsp;&nbsp;<a id="l1" routerLink="/accueil" >Page d'accueil</a></h6>
+    </div>
+    <h6 class="text-right" style="top: 140px;left: 1012px;position: absolute;">Edit Profile</h6>
+</div>
+<div class="row mt-2">
+    <div class="col-md-12">
+       <h6 style="position: absolute; left: 581px;"> Nom et Prénom </h6> 
+    <input type="text" class="form-control" placeholder="Nom de Dr ophtalmologue " 
+    [(ngModel)]=user.nomPrenom ngModel name="nomPrenom"  required #nomPrenom="ngModel" style="margin-top: -10px;
+    width: 350px; margin-bottom: 5px; margin-left: 186px;">
+    <span style="color:red ; font-size: 13px; position: absolute;top: 238px;left: 600px;" 
+    *ngIf="!nomPrenom.valid && nomPrenom.touched">Entrez un  nom et prénom  valide  </span>
+    </div> 
+</div>
+<div class="row mt-2">
+    <div class="col-md-12">
+        <h6 style="    position: absolute;top: 266px; left: 612px;"> Identifiant  </h6> 
+    <input type="text" class="form-control" placeholder="Nom de Dr ophtalmologue " 
+    [(ngModel)]=user.username ngModel name="username"  required #username="ngModel" style="margin-top: 12px;
+    width: 350px; margin-bottom: 5px; margin-left: 186px;">
+    <span style="color:red ; font-size: 13px; position: absolute;top: 238px;left: 600px;" 
+    *ngIf="!username.valid && username.touched">Entrez un  identifiant de utilistaeur valide  </span>
+    </div> 
+</div>
+<div class="row mt-3">
+    <div class="col-md-12">
+        <h6 style="position: absolute;top: 329px; left: 592px;"> Adresse Email </h6> 
+        <input type="text" class="form-control" placeholder="Email"[(ngModel)]=user.email ngModel name="email"  
+        required #email="ngModel" style="margin-top: 4px; width: 350px; margin-bottom: 5px; margin-left: 186px;">
+        <span style="color:red ; font-size: 13px; position: absolute;top: 297px;left: 600px;"  
+        *ngIf="!email.valid && email.touched">Entrez un  email valide  </span>
+        </div> 
+</div>
+
+<div class="row mt-3">
+    <div class="col-md-6">
+        <h6 style="position: absolute;top: 391px;left: 540px;"> Numéro de télephone </h6> 
+        <input type="text" class="form-control" placeholder="Numero de telephone" [(ngModel)]=user.telephone 
+        ngModel name="telephone"  required #telephone="ngModel" style=" margin-bottom: 5px; margin-top: 4px;
+        margin-left: 187px; width: 350px;">
+        <span style="color:red ; font-size: 13px; position: absolute;top: 356px;left: 600px;"  
+        *ngIf="!telephone.valid && telephone.touched">Entrez un  numero  valide  </span>
+        </div> 
+
+        <div class="form-group" >
+            <div id="label1">
+            <h6 class="bmd-label-floating" style="position: absolute;top:443px;left: 600px;">Gender</h6></div>
+            <input type="radio"  [(ngModel)]="gender" value="homme" name="gender" id="homme1"> <label id="label-Homme" >Homme</label> 
+            <input type="radio"  [(ngModel)]="gender" value="femme" name="gender" id="femme1"> <label id="label-Femme">Femme</label>
+            </div>
+    
+</div>
+<br><br>
+<div class="mt-5 text-right">
+    <button class="btn btn-primary profile-button" type="submit" style="position: absolute;top: 482px;left: 600px;" >
+        Valider 
+    </button>
+</div>
+    <button  routerLink="/PageProfile/{{id}}" class="btn btn-primary  cancel-button" type="button"
+    style="position: absolute; top: 482px;left: 711px;">Annuler  </button>
+</div>
+</div>
+</div>
+</div>
+
+</form>
+<div class="image-container">
+    <span class=cercle>
+      <div class="pen">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    </div>
+  </span>
+    <img src={{imagePath}} > <br/>
+    <input type='file' (change)="onSelectFile($event)" class="select-profile-picture" accept=".png, .jpg, .jpeg" />
+    <!--<span class="message">Tap here to select your picture</span>-->
+   
+  
+  </div>
+  <div style="position: absolute;
+  height: 545px;
+  width: 10px;
+  background-color: #dfe6ff;
+  top: 104px;
+  left: 1354px;"></div> 
+</body>
+</html>

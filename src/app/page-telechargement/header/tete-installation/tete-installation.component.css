@@ -1,0 +1,132 @@
+
+/* Navigation */
+.nav-container{
+    
+    position: absolute;
+    width: 1100px;
+    height: 100px;
+    left: 265px;
+    top: 23px;
+}
+.wrapper{
+    width: 1100px;
+    margin: 0;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul {
+    display: flex;
+
+}
+nav.logo{
+margin-top: 20px;
+}
+.nav-items li {
+
+    list-style: none;
+    margin-right: 90px;
+}
+.nav-items li a {
+font-style: normal;
+font-family: "Roboto" , sans-serif ;
+font-size: 18px;
+color: #FFFFFF;
+text-decoration: none;
+}
+/*   header  */
+.header-container{
+    background: #FFFFFF url("src/assets/images/image.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height:685px ;
+    display: flex;
+    align-items: center;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1{
+  
+    /*width: 576px;
+    height: 78px;
+    left: 48px;
+    top: 260px;
+    font-style: normal;*/
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px;
+    color: #36508D;
+    margin-bottom: 0;
+    margin-left: 40px;
+}
+header p {
+   
+/*height: 10px;
+left: 48px;
+top: 260px;
+font-style: normal;*/
+
+font-size: 20px;
+line-height: 30px;
+color: #000000;
+margin-bottom: 40px;
+margin-left: 40px;
+height: 100px;
+}
+
+header  a {
+    font-style: normal;
+    font-family: "Roboto" , sans-serif ;
+    font-size: 18px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: #5E7BB0;
+    border-radius: 30px;
+    padding:  12px 48px;
+    margin-left: -10px;
+    display: inline-block;
+    transition: 300ms;
+    cursor: pointer;}
+    header a:hover {
+        color: #000000;
+        border-color: #5E7BB0;
+        cursor: pointer
+    }
+ /*  margin-bottom: 20px;
+}
+header a:hover{
+    transform: translateY(-10px);
+}*/
+#more {display: none;}
+
+
+
+/**************   css des liens ******************************/
+.nav-items li a:hover {
+  /* background:  -webkit-linear-gradient(right, hsl(357, 50%, 55%), #f70318);*/
+    color: #000;
+    cursor: pointer
+}
+
+
+.nav-items li a:focus {
+   /* background:  -webkit-linear-gradient(right, #7f8b96, #c8cbcc);*/
+    color: #000;    box-shadow: none
+}
+
+.nav-items li a:active {
+   /* background:  -webkit-linear-gradient(right, #7f8b96, #c8cbcc);*/
+    color: #000;
+     box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+    <a id="accueil" routerLink=""><i class="fa fa-home"></i>&nbsp;Accueil</a>
+    <div class="login-dark">
+       <div class="container">
+         <div class="forms">
+        <form (ngSubmit)="login1(fl)" #fl=ngForm style="position: fixed;">
+            <div class="illustration">
+                <img src="./assets/imagesD/cadnaa.png" style="position: relative;
+                top: -66px;left: -25px;">
+             <!--  <i class="icon ion-ios-locked-outline"></i>-->
+            </div>
+            <div class="input-field">
+                <input type="text"   placeholder="Nom et prenom" 
+                ngModel name="nom"  required #nom="ngModel"  style="color: #fff;">
+                <i class="fa fa-user" style="margin-top: -25px;margin-left: -25px;" ></i>
+                <span style="color: red;position: absolute;left: 11px;margin-left: 34px; width: 340px;top: 223px;"
+                *ngIf="!nom.valid && nom.touched">Entrer  nom  valide </span>
+            
+            </div>
+           
+          
+<div class="input-field">
+    <input  id="password-field" type="password" name="password" placeholder="Mot de passe" 
+    ngModel name="pwd"  required #pwd="ngModel" style="color: #fff;">
+    <i class="fa fa-lock icon" style="margin-top: 40px;margin-left: 16px;"></i>
+    <span toggle="#password-field" class="fa fa-fw fa-eye-slash  toggle-password"
+    style="position:absolute;margin-top:19px;margin-left: 240px;" ></span>
+    <span style="color: red;position: absolute;left: 13px;margin-left: 34px; top: 289px;" 
+*ngIf="!pwd.valid && pwd.touched" >Entrer  un mot de passe valide </span>
+</div>
+            <br><br><br>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Connexion</button>
+            </div>
+            <a routerLink="/ForgetPswdAdmin" class="forgot">J'oblier le mot de passe?</a>
+         <!--<h3 class="txt">Vous n'avez pas un Compte<a   class="btn2" routerLink="/Registre-Admin">&nbsp;S'inscrire</a></h3>-->
+
+        </form>
+         </div>
+       </div>
+    </div>
+</body>
+</html>

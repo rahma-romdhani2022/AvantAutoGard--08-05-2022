@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+ <title>Welcome</title>
+</head>
+<body>
+ 
+    <div class="wrapper1">
+    <div class="form-inner">
+      <div class="form-container">
+         
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4" headerPosition="above" [selectedIndex]="3">
+            <mat-tab *ngIf="demandeG !==0 && (existenceAvisExpertGauche === 0 || existenceAvisExpertGauche === 2) " >
+     
+        <ng-template mat-tab-label>
+            <mat-icon>
+                <img src ="./assets/images/eyeA.gif"  width="35px" height="35px" id="icone1" />
+            </mat-icon>
+            <a routerLink="/avis_gauche/{{idConsultation}}" style="text-decoration: none;color: black;">
+                <i class="fa fa-angle-double-left fa-1x" aria-hidden="true"></i>
+                    &nbsp; Oeil Gauche
+            </a> 
+         
+        </ng-template>
+         
+    </mat-tab>
+    <mat-tab [disabled]='true'></mat-tab>
+    <mat-tab  [disabled]='true' ></mat-tab>  
+  
+ <mat-tab  > 
+<ng-template mat-tab-label>
+    <mat-icon><img src ="./assets/images/eyeA.gif"  width="35px" height="35px" id="icone1" />
+    </mat-icon>
+    Oeil Droite &nbsp; <i class="fa fa-angle-double-right" aria-hidden="true"></i> 
+</ng-template>
+
+<form  style="height: 600px;" (ngSubmit)="addAvisDroite(f.value)" #f=ngForm >
+      <div class="field">      
+        <div class="gallery" >  
+            <div class="row">
+              
+              <div class="col-2"  *ngFor="let image of images" >                              
+              <a data-fancybox="gallery" data-src="image">
+                <img [src]="image" width="230px" height="230px" /></a>
+             </div>
+             </div>       
+        
+</div>
+</div>
+      <div class="dropdown">
+        <mat-form-field appearance="fill">
+          <mat-label> choisir le maladie </mat-label>
+         
+          <select matNativeControl  *ngIf="maladies" ngModel  name="maladieDroite" id="maladieDroite" required #maladieDroite="ngModel">
+            <option value="" disabled selected></option>
+            <option *ngFor="let maladie of maladies" value="{{maladie.nom}}" change="spoiler(this)" >{{maladie.nom}}</option>
+           
+          </select> 
+        </mat-form-field>
+         </div> 
+  <div id="contain1">
+      <label id="maladie" *ngIf="AutoDetection.maladieDroite !== null ; else choix2"> Maladie : &nbsp;{{AutoDetection.maladieDroite}}</label>    
+      <ng-template #choix2>
+        <label id="maladieElse" > rien &nbsp;</label> 
+       </ng-template>
+    </div> 
+   
+   <div class="dropdownNiv2">
+    <mat-form-field appearance="fill">
+     <mat-label>choisir le niveau </mat-label>
+     <select matNativeControl  *ngIf="maladies" ngModel  name="graviteDroite" id="graviteDroite" required #graviteDroite="ngModel">
+        <option value="" disabled selected></option>
+        <option *ngFor="let niveau of niveaux" value="{{niveau.niv}}">{{niveau.niv}}</option>
+       
+     </select> 
+   </mat-form-field>
+</div>
+ 
+
+   <div id="contain2">
+      <label id="niveau" *ngIf="AutoDetection.graviteDroite !== 0 ; else choix2gravite"> Niveau : &nbsp;{{AutoDetection.graviteDroite}}</label>
+      <ng-template #choix2gravite>
+        <label id="niveauElse" > rien &nbsp;</label> 
+       </ng-template>
+    </div> 
+ 
+<div id="aviss">
+<div class="md-form amber-textarea active-amber-textarea">
+ 
+ <textarea id="form22" class="md-textarea form-control" cols="4"  placeholder="Ecrire  ici ton avis ...."
+ ngModel  name="commentaireDroite" id="commentaireDroite" required #commentaireDroite="ngModel">
+
+ </textarea>
+</div>
+</div>
+      <div style="width: 100px;height: 100px;position: absolute;top: 450px;left:515px;">
+        <button  *ngIf="boutonValider === 0 ; else avisAjouter" type="submit"  class="btn btn-primary">Valider</button> 
+        <ng-template #avisAjouter>
+          <button  type="button" class="btn btn-outline-primary"style="width: 300px; margin-left: -196px;">
+            Votre avis est bien ajouté</button> 
+         </ng-template>
+      </div>
+
+       <div style="width: 100px;height: 100px;position: absolute;top: 450px;left:650px;">
+        <button  class="btn btn-danger" routerLink="/demande_droite/{{idConsultation}}">Quitter</button> 
+     
+      </div>
+      <!--div id="SainBody">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" ngModel  name="sainDroite" type="checkbox" id="sainCheckbox" value="sain"  (change)="handleSelected($event)">
+        <label class="form-check-label" for="inlineCheckbox1">sain</label>
+      </div></div-->
+      </form> 
+    </mat-tab>
+    </mat-tab-group>
+</div>
+</div> 
+  </div>
+<div class="nav-container">
+<div class="wrapper">
+<br>
+<nav>
+<div class="img-nav">
+<img src="./assets/images/navbar.png" >
+</div>
+<ul class="nav-items">
+<div class="content">
+<div id="admin"></div>
+  <img src="./assets/images/menu 1.png" id="menu">
+  <div id="menu23">
+    <div id="arrow"></div>
+    <a routerLink="/PageProfile">Profile <i id="firstIcon" class="fa fa-user-md"></i></a>
+    <a routerLink="/chart-Activity-Doctor">Mon Activité<i id="secondIcon" class="fa fa-bar-chart-o"></i></a>
+    <a >Mode d'affichage 
+      <div class="button-con">
+          <label id='sun' for='cb1'>
+              <i class="fa fa-sun-o fa-1x" aria-hidden="true"></i>
+          </label>
+          <input class='toggle' id='cb1' type='checkbox'>
+          <label class='toggle-button' for='cb1'></label>
+          <label id='moon' for='cb1'>
+              <i class="fa fa-moon-o fa-1x" aria-hidden="true"></i>
+          </label>
+        </div>  
+        </a>              
+    </div>
+</div>
+<a routerLink="/PageProfile/{{id}}">
+<img src={{imagePath}} class="img-carree">
+<div class="pointConnexion"></div>
+</a>
+<a routerLink="/PageProfile/{{id}}"  id="nom">Bienvenue  
+<span>{{user.username}}</span></a>
+<li>
+    <div class="budgecard">
+      <a  class="notifications"  routerLink="/accueil">
+        <i class="fa fa-bell" aria-hidden="true"></i>  
+        <span class="badge" *ngIf=" serviceAvis.lengthDemandePrincipale !== 0 ">{{serviceAvis.lengthDemandePrincipale}}</span> &nbsp;Accueil 
+    </a>
+    </div>
+    </li>
+    <img src="./assets/images/Line.svg" id="line1">
+
+    <li>
+        <a routerLink="/historique"  id="list"><i class="fa fa-history" aria-hidden="true" ></i> Historique  des avis</a>
+        </li>
+    <li>
+        <img src="./assets/images/Line.svg" id="line2">
+        
+        <a id="logout" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a>
+    </li>
+</ul>
+</nav>
+</div>
+</div> 
+<div style="position: absolute;
+height: 545px;
+width: 10px;
+background-color: #dfe6ff;
+top: 104px;
+left: 1354px;"></div> 
+<div  *ngIf ="demandeG === 0 || existenceAvisExpertGauche === 1" style="position: absolute;top: 133px;left: 157px;font-size: 14.5px;"> 
+  <a  style="text-decoration: none;color: #adb5bd;">
+    <i class="fa fa-angle-double-left fa-1x" aria-hidden="true"></i>
+        &nbsp; Oeil Gauche
+</a> 
+</div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<!---->  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+ <title>Welcome</title>
+</head>
+<body>
+    <div class="header-container">
+        <div class="wrapper">
+            <header  >               
+       <div class="detail" >
+            <p><label > Nom et Prénom de patient&nbsp;:<br>{{nomDePatient}}</label> </p>
+            <p><label for="">Age : &nbsp;:&nbsp;{{dateNaissancePAtient}}</label></p>
+            <p><label for="">Gender &nbsp;:&nbsp;{{genderPatient}}</label></p>
+            <p><label >Antécédents : &nbsp;:&nbsp;{{antecedantsPatiens}}</label></p>
+                
+                   <a routerLink="/infosPatient">Détail</a>
+               </div>   
+                
+            </header>
+         </div>
+    </div>
+
+<div class="wrapper1">
+<div class="form-inner">
+   <div class="form-container">
+         
+<div class="login-page">
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4" headerPosition="above" [selectedIndex]="3">
+        <mat-tab  *ngIf="demandeG !== 0   ">
+    <ng-template mat-tab-label>
+        <mat-icon>
+            <img src ="./assets/images/eyeA.gif"  width="35px" height="35px" id="icone1" />
+        </mat-icon>
+        <a routerLink="/demande_gauche/{{idConsultation}}" style="text-decoration: none;color: black;" >
+            <i class="fa fa-angle-double-left fa-1x" aria-hidden="true"></i>
+                &nbsp; Oeil Gauche
+        </a> 
+     
+    </ng-template>
+     </mat-tab>  
+   
+   <mat-tab [disabled]='true'></mat-tab>
+   <mat-tab  [disabled]='true' ></mat-tab>  
+
+  
+    <mat-tab> 
+    <ng-template mat-tab-label>
+        <mat-icon><img src ="./assets/images/eyeA.gif"  width="35px" height="35px" id="icone1" />
+        </mat-icon>
+       Oeil Droite &nbsp;
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i> 
+    </ng-template>
+    <form  >
+      <div class="field">
+        <!--div class="gallery" >                              
+            <a  href="image1 "data-fancybox="gallery"   >
+                <img src={{image1}} width="198px" height=198px  *ngIf="image1"></a>
+           <a href="image2" data-fancybox="gallery">
+                <img src={{image2}} width="198px" height="198px" *ngIf="image2" ></a>
+           <a href="image2" data-fancybox="gallery">
+                <img src={{image3}} width="198px" height="198px"  *ngIf="image3" ></a>
+           <a href="image2" data-fancybox="gallery">
+                <img src={{image4}} width="198px" height="198px" *ngIf="image4"  ></a>
+           <a href="image2" data-fancybox="gallery">
+                <img src={{image5}} width="198px" height="198px" *ngIf="image5" ></a>
+            
+        </div-->
+        <div class="containerF">
+            <div class="grid-item">
+              <a data-fancybox="gallery" [attr.href]="image1">
+                  <img [src]="image1"></a>
+            </div>
+           
+          
+          </div>
+        
+
+        </div>
+<div id="contain1">
+    <label id="maladie" *ngIf="AutoDetection.maladieDroite !== null ; else autreMaladie"> Maladie : &nbsp;{{AutoDetection.maladieDroite}}</label> 
+    <ng-template #autreMaladie>
+    <label id="maladieElse" >  rien de maladie detecter par un IA Model  &nbsp;</label> 
+    </ng-template>
+</div>
+        <div id="contain2">
+           <label id="niveau" *ngIf="AutoDetection.graviteDroite !== 0 ">Niveau : &nbsp;{{AutoDetection.graviteDroite}}</label>
+        </div>
+ <div class="slide-controls1" *ngIf=" demandeD !== 0  && (existenceAvisExpertDroite === 0  )   ; else cas1 " >
+            <input type="radio" name="slide1" id="login" checked  >
+            <a class="buttonAjout" routerLink="/avis_droite/{{idConsultation}}" >
+                <label style="color: #fff;font-size: 18px;position: absolute;
+                   top: 14px;  left: 93px;" >Ajouter un avis</label></a>
+        <div class="slider-tab1"></div>
+  </div> 
+<!--*ngIf="demandeD !== 0  && existenceAvisExpertDroite === 1"-->
+    <ng-template #cas1>
+            <div class="slide-controls1Disabled"    >
+                <input type="radio" name="slide1" id="login" checked  >
+                <button class="buttonAjout1" (click)="disabledButton()">
+                    <label style="color:  #fff;font-size: 18px;position: absolute;
+                    top: 14px;  left: 93px;" >Avis déja ajouté  </label></button>
+            <div class="slider-tab1"></div> 
+            </div>
+     </ng-template>
+        <!--button  annuler ou bien pour quitter la demande--> 
+        <div class="slide-controls2">
+            <input type="radio" name="slide1" id="login" checked>
+            <a class="buttonQuitter" routerLink="/accueil">
+                <label style="color: #fff;font-size: 18px;position: absolute;
+                   top: 14px;  left: 125px;" > Quitter </label></a>
+        <div class="slider-tab1"></div>
+        </div>      
+    </form> 
+</mat-tab>
+</mat-tab-group>
+</div>
+</div>
+</div>
+</div>
+<div class="nav-container">
+    <div class="wrapper">
+        <br>
+        <nav>
+            <div class="img-nav">
+                <img src="./assets/images/navbar.png" >
+            </div>
+            <ul class="nav-items">
+                <div class="content">
+                    <div id="admin"></div>
+                      <img src="./assets/images/menu 1.png" id="menu">
+                      <div id="menu23">
+                        <div id="arrow"></div>
+                        <a routerLink="/PageProfile">Profile <i id="firstIcon" class="fa fa-user-md"></i></a>
+                        <a routerLink="/chart-Activity-Doctor">Mon Activité<i id="secondIcon" class="fa fa-bar-chart-o"></i></a>
+                        <a >Mode d'affichage 
+                                <div class="button-con">
+                                    <label id='sun' for='cb1'>
+                                        <i class="fa fa-sun-o fa-1x" aria-hidden="true"></i>
+                                    </label>
+                                    <input class='toggle' id='cb1' type='checkbox'>
+                                    <label class='toggle-button' for='cb1'></label>
+                                    <label id='moon' for='cb1'>
+                                        <i class="fa fa-moon-o fa-1x" aria-hidden="true"></i>
+                                    </label>
+                                  </div>  
+                                  </a>
+                    </div>
+                </div>
+                <a routerLink="/PageProfile/{{id}}">
+                    <img src={{imagePath}} class="img-carree">
+                    <div class="pointConnexion"></div>
+                </a>
+                <a routerLink="/PageProfile/{{id}}"  id="nom">Bienvenue  
+                    <span>{{user.username}}</span></a>
+                <li>
+                        <div class="budgecard">
+
+                            <a  class="notifications"  routerLink="/accueil">
+                                <i class="fa fa-bell" aria-hidden="true"></i>  
+                                <span class="badge" *ngIf=" serviceAvis.lengthDemandePrincipale !== 0 ">{{serviceAvis.lengthDemandePrincipale}}</span> &nbsp;Accueil 
+                            </a></div>
+                    </li>
+                    <img src="./assets/images/Line.svg" id="line1">
+
+                    <li>
+                        <a routerLink="/historique"  id="list"><i class="fa fa-history" aria-hidden="true" ></i> Historique  des avis</a>
+                        </li>
+                    <li>
+                        <img src="./assets/images/Line.svg" id="line2">
+                        
+                        <a id="logout" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a>
+                       
+                    </li>
+            </ul>
+            
+        </nav>
+    </div>
+</div>  
+<div style="position: absolute;
+height: 545px;
+width: 10px;
+background-color: #dfe6ff;
+top: 104px;
+left: 1354px;"></div> 
+<div *ngIf="demandeG === 0 " style="position: absolute;top: 137px;left: 355px;font-size: 14.5px;"> 
+
+    <a   style="text-decoration: none;color: #adb5bd;" >
+      <i class="fa fa-angle-double-left fa-1x" aria-hidden="true"></i>
+          &nbsp; Oeil Gauche
+</a> 
+</div> 
+
+</body>
+</html>

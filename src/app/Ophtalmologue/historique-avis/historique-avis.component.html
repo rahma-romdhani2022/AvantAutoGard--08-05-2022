@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Welcome</title>
+</head>
+<body>
+    <div class="header-container">
+        <div class="wrapper">
+            <header>
+                <div class="ssss" >
+                    <div class="container" >
+                <div class="row gx-2 gy-2 align-items-center" *ngIf="lengthAlllHistoriquesDeExpert !==0; else pageVide" >
+                    <div class="col-sm-3 mb-3" *ngFor="let demande of resultats" >
+                    <div class="card" style=" height: 150px;border-spacing: 15px 2rem;border-radius: 25px;" >
+                    <img src="./assets/imagesD/faces/user1.png" width="50px" height="50px" style="border-radius: 45%;">
+                    <a href="">{{demande.patient.username }}</a>
+                    <h3>{{demande.dateConsult}}</h3>
+                    <a id="btnR" >Répondu</a>
+                    <a id ="profileP" > <i class="fa fa-star" aria-hidden="true" ></i> &nbsp; {{demande.generaliste.username}}</a>
+                    <a id ="patient" routerLink="/historiques"> &nbsp;Consultations</a> 
+                                    </div>
+                                </div>
+                                    </div>
+                                </div> </div>
+            </header></div>
+</div>
+<div class="nav-container">
+<div class="wrapper">
+<br>
+<nav>
+<div class="img-nav">
+<img src="./assets/images/navbar.png" >
+</div>
+<ul class="nav-items">
+<div class="content">
+    <div id="admin"></div>
+        <img src="./assets/images/menu 1.png" id="menu">
+        <div id="menu23">
+        <div id="arrow"></div>
+        <a routerLink="/PageProfile">Profile <i id="firstIcon" class="fa fa-user-md"></i></a>
+        <a routerLink="/chart-Activity-Doctor">Mon Activité<i id="secondIcon" class="fa fa-bar-chart-o"></i></a>
+        <a >Mode d'affichage 
+            <div class="button-con">
+                <label id='sun' for='cb1'>
+                    <i class="fa fa-sun-o fa-1x" aria-hidden="true"></i>
+                </label>
+                <input class='toggle' id='cb1' type='checkbox'>
+                <label class='toggle-button' for='cb1'></label>
+                <label id='moon' for='cb1'>
+                    <i class="fa fa-moon-o fa-1x" aria-hidden="true"></i>
+                </label>
+                </div>  
+                </a>
+        </div>
+</div>
+<a routerLink="/PageProfile/{{id}}">
+    <img src={{imagePath}} class="img-carree">
+    <div class="pointConnexion"></div>
+</a>
+<a routerLink="/PageProfile/{{id}}"  id="nom">Bienvenue  
+    <span>{{user.username}}</span></a>
+<li>
+        <div class="budgecard">
+
+            <a  class="notifications"  routerLink="/accueil">
+                <i class="fa fa-bell" aria-hidden="true"></i>  
+                <span class="badge" *ngIf=" avisService.lengthDemandePrincipale !== 0 ">{{avisService.lengthDemandePrincipale}}</span> &nbsp;Accueil 
+            </a>
+    </div>
+    </li>
+    <img src="./assets/images/Line.svg" id="line1">
+
+    <li>
+        <a routerLink="/historique"  id="list"><i class="fa fa-history" aria-hidden="true" ></i> Historique  des avis</a>
+        </li>
+    <li>
+        <img src="./assets/images/Line.svg" id="line2">
+        
+        <a id="logout" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a>
+        <!--<img src="./assets/images/logout.png" id="iconeLogout">-->
+    </li>
+</ul>
+
+</nav>
+</div>
+</div>  
+<!-- input de recherche des patients -->
+<div class="constrain12">
+<input class="input-grey-rounded" type="text" placeholder="recherche  ...."> 
+</div>
+<ng-template #pageVide >
+<div style="position: absolute; top: 320px;left: 450px;">
+<h4>pas des demande des avis pour le moment 
+</h4>
+</div>  
+</ng-template>
+<div style="position: absolute;
+height: 545px;
+width: 10px;
+background-color: #dfe6ff;
+top: 104px;
+left: 1354px;"></div> 
+</body>
+</html>

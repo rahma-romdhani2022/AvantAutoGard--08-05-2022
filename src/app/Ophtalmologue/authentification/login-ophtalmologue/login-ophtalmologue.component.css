@@ -1,0 +1,407 @@
+*{
+    box-sizing: border-box;
+}
+.header-container{
+    background-color: #D7D3D3;
+}
+body{
+    position: relative;
+    width: 1362px;
+    height: 646px;
+    background-color: #e9ecef;
+
+    }
+    .Email img{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 40px;
+        top: 104px;
+        
+    }  
+    .Pasword img{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 40px;
+        top: 164px;
+    }        
+    nav ul {
+        display: flex;
+        padding-left: 30rem;
+    }
+    nav img {
+        display: flex;
+        padding-left: 14rem;
+        
+
+    }
+   
+  .nav-items li {
+
+        list-style: none;
+        margin-right: 90px;
+    }
+    .nav-items li a {
+        font-style: normal;
+        font-family: "Roboto" , sans-serif ;
+        font-size: 20px;
+        left: 850px;
+        color: #070707;
+        text-decoration: none;
+        top: 100px;     
+    }
+    .wrapper .hero-image img {
+        position: absolute;
+        width: 320px;
+        height: 358px;
+        left: 54px;
+        top: 173px;
+        background-color: #283E93;  
+         border-radius: 30px;
+    }
+    .wrapper .contour {
+        position: absolute;
+        width: 290px;
+        height: 358px;
+        left: 425px;
+        top: 173px;
+        background: #fbfbfb;
+    }
+    .wrapper .contour2{
+        position: absolute;
+        width: 340px;
+        height: 360px;
+        left: -50px;
+        top: 0px;
+        background: #FFFFFF;
+        border-radius: 40px; }
+ .wrapper .contour2 h2{
+        position: absolute;
+        width: 519px;
+        height: 84px;
+        left: -100px;
+        top: 30px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 134.69%;
+        text-align: center;
+        letter-spacing: 0.195em;
+        color: rgba(0, 0, 0, 0.75);
+
+        }
+        .wrapper .contour2 .pwd{
+            position: absolute;
+            width: 519px;
+            height: 84px;
+            left: -100px;
+            top:220px ;
+            font-family: "Poppins" , sans-serif;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 17.5px;
+            text-align: center;
+            color: #1D2366;
+            border-radius: 22px;
+            
+            }
+ .Email .form{
+    position: absolute;
+    width: 280px;
+    height: 45px;
+    left: 28px;
+    top: 100px;
+    
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;}
+ .Pasword .form{
+    position: absolute;
+    width: 280px;
+    height: 45px;
+    left: 28px;
+    top: 160px;
+    
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;}
+    .wrapper .btn1{
+        width: 100px;
+        height: 40px;
+        position: absolute; 
+        font-weight: bold;
+        font-size: 17px;
+        left: 65px;
+        top: 260px;
+        text-decoration: none;
+        color: #f5f1f1;
+        background: #283E93;
+        padding:  10px 30px;
+        margin-left: 40px;
+    
+        display: inline-block;
+        transition: 300ms; }
+ header .btn1:hover{
+            transform: translateX(-10px); 
+            transform: translateX(10px); 
+             }
+.wrapper .txt{
+    position: absolute;
+    width: 470px;
+    height: 20px;
+    left: -70px;
+    top: 321px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 115.69%;
+    /* or 28px */
+    
+    text-align: center;
+    letter-spacing: 0.06em;
+    
+    color: #000000;    
+     }
+.wrapper .btn2{    
+        color: #3F3D56;
+        font-weight: bold;
+        font-size: 17.5px; }
+ 
+
+/* css form */
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  #emailInput{
+      top: -3px;
+      left: 10px;
+      width: 300px;
+  }
+  #inputPassword{
+    top: -5px;
+    left: 10px;
+    width: 300px;
+  }
+  input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+#forget{
+    position: absolute;
+left: 34%;
+right: 20%;
+top: 70%;
+bottom: 27.72%;
+font-family: bold;
+font-style: italic;
+font-weight: normal;
+font-size: 17px;
+line-height: 137.19%;
+/* or 41px */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.06em;
+
+color: #1D2366;
+text-decoration: none;
+}
+#loginBtn{
+    margin-top: 20px;
+    margin-left: 110px;
+    font-family: "Poppins" , sans-serif;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    color: #FFFFFF;
+     width: 115px;
+     border-radius: 10px;
+   height: 40px;
+    background: #283e93;
+ 
+   
+}
+#loginBtn:hover{
+    color:#000000;
+}
+/*#loginBtn:focus {
+    background:  -webkit-linear-gradient(right, #7f8b96, #c8cbcc);
+    color: #000;    box-shadow: none
+}*/
+
+#loginBtn:active {
+    color: #000;
+     box-shadow: none
+}
+h2{
+    position: absolute;
+width: 519px;
+height: 84px;
+margin-left: 20px;
+top: 244px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 45px;
+line-height: 134.69%;
+/* or 61px */
+
+text-align: center;
+letter-spacing: 0.195em;
+
+color: rgba(0, 0, 0, 0.75);
+
+}
+hr{
+    margin-top: 75px;
+}
+#btnSignUp{
+width: 470px;
+height: 20px;
+left: 80px;
+top: 160px;
+font-family: "Poppins", "sans-serif";
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 115.69%;
+/* or 28px */
+
+text-align: center;
+letter-spacing: 0.06em;
+text-decoration: none;
+color: #3F3D56;
+}
+#btnSignUp1{
+    width: 470px;
+    height: 20px;
+    margin-left: -70px;
+    margin-top: 13.5px;
+    font-family: "Poppins", "sans-serif";
+    font-size: 14px;
+    /* or 28px */
+    
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: #000000;
+    }
+  #iconeEmail{
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+  }
+  #iconePwd{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    top:100px;
+  }
+
+
+  /****** forms login newwww *******/
+  .container.active .login {
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.36s ease, opacity 0.3s ease;
+  }
+  
+.form .input-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .input-field input {
+    position: absolute;
+    top: -10px;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: border-bottom-color 0.4s ease;
+  }
+  
+  .input-field input:is(:focus, :valid) {
+    border-bottom-color: #4070f4;
+  }
+  
+  .input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: color 0.4s ease;
+  }
+  
+  .input-field input:is(:focus, :valid) ~ i {
+    color: #4070f4;
+  }
+  
+  .input-field i.icon {
+    left: 0;
+  }
+  
+  .input-field i.showHidePw {
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .form .checkbox-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+  
+  .checkbox-text .checkbox-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-content input {
+    margin: 0 8px -2px 4px;
+    accent-color: #4070f4;
+  }
+  
+  .form .text {
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .form a.text {
+    color: #4070f4;
+    text-decoration: none;
+  }
+  
+  .form a {
+    text-decoration: none;
+  }
+  
+  .form a:hover {
+    text-decoration: underline;
+  }
+  
+  .form .button {
+    margin-top: 35px;
+  }
+.espace{
+  margin-top: 15px;
+}

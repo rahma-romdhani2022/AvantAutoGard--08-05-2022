@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>       
+  
+  <aside class="profile-card"> 
+
+    <header>
+
+      <!-- here’s the avatar -->
+      <a target="_blank"  class="imageProfile">    
+        
+        <img src={{imagePath}} class="hoverZoomLink">
+        <span class="active"></span>
+        <!--<td class="status"><span class="active">Active</span></td>
+        <td>-->
+      </a>
+  <a routerLink="/EditProfile/{{id}}"><img id="editIcone" src="./assets/images/user-avatar.png"></a>
+      <!-- the username --><br><br>
+      <h1>{{user.nomPrenom}}
+            </h1>
+  
+      <!-- and role or location -->
+      <h2>
+              Dr Ophtalmolgue Expert
+            </h2>
+  
+    </header>
+  
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
+
+    <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> {{user.email}}</p>
+    <p class="tel"><i class="fa fa-phone" aria-hidden="true"></i>   {{user.telephone}}   </p>
+    <div *ngIf="gender === 'femme' ">
+       <p class="adresse"><i class="fa fa-female" aria-hidden="true"></i> &nbsp;Femme</p>
+    </div>
+    <div *ngIf="gender === 'homme' ">
+      <p class="adresse"><i class="fa fa-male" aria-hidden="true"></i>&nbsp; Homme</p>
+   </div>
+
+      
+       
+    </div>
+  
+    <!-- some social links to show off 
+    <ul class="profile-social-links">
+      <li>
+        <a target="_blank" href="https://www.facebook.com/creativedonut">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://twitter.com/dropyourbass">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://github.com/vipulsaxena">
+          <i class="fa fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.behance.net/vipulsaxena">
+         
+          <i class="fa fa-behance"></i>
+        </a>
+      </li>
+    </ul>-->
+
+  </aside>
+
+</body>
+</html> 
+<app-btn-profil></app-btn-profil>
